@@ -1,7 +1,8 @@
-var CACHE_VERSION = 'app-v20';
-var CACHE_FILES = [
+
+var cacheName = 'app-v1.0';
+var filesToCache = [
     '/',
-    '/index.html',
+    'index.html',
     '/css/style.css',
     '/js/main.js',
     '/js/game.js',
@@ -18,56 +19,21 @@ var CACHE_FILES = [
     'images/banner(2).jpg',
 ];
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(CACHE_VERSION)
-    .then(function(cache) {
-      console.log('Opened cache');
-      return cache.addAll(CACHE_FILES);
+/* Start the service worker and cache all of the app's content */
+self.addEventListener('install', function(e) {
+  console.log('sw install event!');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(filesToCache);
     })
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  let online = navigator.onLine
-  if (!online) {
-    event.respondWith(
-      caches.match(event.request).then(function(res) {
-        if (res) {
-          return res;
-        }
-        requestBackend(event);
-      })
-    )
-  }
-});
-
-function requestBackend(event) {
-  var url = event.request.clone();
-  return fetch(url).then(function(res) {
-    //if not a valid response send the error
-    if (!res || res.status !== 200 || res.type !== 'basic') {
-      return res;
-    }
-
-    var response = res.clone();
-
-    caches.open(CACHE_VERSION).then(function(cache) {
-      cache.put(event.request, response);
-    });
-
-    return res;
-  })
-}
-
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
-    caches.keys().then(function(keys) {
-      return Promise.all(keys.map(function(key, i) {
-        if (key !== CACHE_VERSION) {
-          return caches.delete(keys[i]);
-        }
-      }))
+/* Serve cached content when offline */
+self.addEventListener('fetch', function(e) {
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
     })
-  )
+  );
 });
