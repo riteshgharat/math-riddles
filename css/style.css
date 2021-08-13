@@ -1,0 +1,569 @@
+/*!important global css*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+:root {
+  --bg: #202020;
+  /* main bg color */
+  --nav: #181818;
+  /* nav color */
+  --text: #E0E0E0;
+  /* text color */
+  --btn: #101010;
+  /* button color */
+  --hover:
+    /* #505050*/
+    #56575E;
+  /* button on hover color */
+}
+
+body {
+  font-size: 15pt;
+  background-color: var(--bg);
+}
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background-color: var(--nav);
+  display: flex;
+  align-items: center;
+}
+
+img {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+}
+
+.score {
+  font-size: 30px;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+
+.countdown {
+  width: 50%;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  text-align: center;
+}
+
+.confirm-box-layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .33s ease-out;
+}
+
+.confirm-box {
+  width: 50%;
+  height: 35vh;
+  position: relative;
+  background-color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 1;
+  z-index: 0;
+}
+
+.confirm-box p {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.confirm-box .yesNobtn {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 20px;
+}
+
+.confirm-box button {
+  height: 40px;
+  width: 120px;
+  border: 2px solid #fff;
+}
+
+.confirm-box-display {
+  transition: all .33s ease-out;
+  visibility: visible;
+  /*display: flex;*/
+  opacity: 1;
+  z-index: 2;
+}
+
+/* !important app css */
+
+/* main container css */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+}
+
+.main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  transform: scale(1);
+  background-color: var(--bg);
+}
+
+.main-container .dice-app,
+.info,
+.share {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  background-color: var(--nav);
+  border-right: 5px solid var(--hover);
+  border-bottom: 5px solid var(--hover);
+}
+
+.main-container .info:active,
+.dice-app:active {
+  transition: 0.750ms;
+  border: none;
+  transform: translate(5px, 5px);
+}
+
+.title {
+  height: 40vh;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title h2,
+#score {
+  font-family: sans-serif;
+  font-size: 50px;
+  margin: 10px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.5em;
+}
+
+.title p {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: var(--hover);
+}
+
+.title span {
+  font-size: 12px;
+  color: var(--hover);
+}
+
+.main-container .main-page-btn {
+  height: 60vh;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-container .main-btn {
+  height: 80px;
+  width: 250px;
+  font-size: 18px;
+  margin: 30px;
+  border: 2px solid #fff;
+}
+
+.main-con-none {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+  display: none;
+}
+
+.sub-title {
+  display: none;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--btn);
+  color: var(--text);
+  border: 1px solid var(--hover);
+}
+
+.btn:active {
+  background-color: #505050;
+}
+
+#back {
+  width: 100px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+/* about and scoreboard container css 
+.about-app,
+.score-board,
+.box {
+  height: 100vh;
+  width: 100%;
+  zoom: unset;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box {
+  height: 60vh;
+}
+
+/*.about-box{
+  display: none;
+}
+.score-box {
+  display: none;
+}
+
+.about-app .info-p {
+  width: 80%;
+  font-size: 15px;
+  font-family: sans-serif;
+  color: var(--text);
+}
+
+.about-app button {
+  height: 50px;
+  width: 140px;
+  margin: 30px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.about-app .sourceCode {
+  background-color: #6572FF;
+}
+
+.about-app-display {
+  display: none;
+}
+
+.score-board {
+  display: none;
+}
+*/
+
+/* level container css */
+.level-container {
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.level-nav {
+  height: 10vh;
+  position: relative;
+  top: 0;
+}
+
+#level {
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.level-con-btn {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.level-btn {
+  height: 80px;
+  width: 200px;
+  margin: 30px;
+  border: 2px solid #fff;
+}
+
+.level-con-none {
+  z-index: 0;
+  display: none;
+}
+
+/* game container css */
+.game-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
+
+.game-nav {
+  height: 10vh;
+}
+
+.operation-container {
+  height: 60vh;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.operation-container #input {
+  height: 100px;
+  width: 300px;
+  margin: 20px;
+  background-color: transparent;
+  font-size: 18px;
+  color: var(--text);
+  padding: 5px;
+  border: 1px solid var(--text);
+  outline: none;
+  grid-column: 1/3;
+}
+
+
+.operation-container .check {
+  margin: 20px;
+  height: 100px;
+  width: 300px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--text);
+}
+
+.sum {
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+  position: fixed;
+}
+
+.keyboard {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  height: 90%;
+  padding: 10px 10px 10px 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.keyboard #input {
+  background-color: transparent;
+  font-size: 18px;
+  color: var(--text);
+  padding: 5px;
+  border: 1px solid var(--text);
+  outline: none;
+  grid-column: 1/3;
+  position: relative;
+}
+
+
+.keyboard #check {
+  grid-column: 4/6;
+  background-color: "";
+  position: relative;
+}
+
+.keyboard .btn {
+  display: grid;
+  place-items: center;
+  background-color: var(--btn);
+  color: var(--text);
+}
+
+.keyboard .btn:active {
+  background-color: #505050;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, .82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .33s ease-out;
+  transform: scale(1.2);
+}
+
+.overlay-inner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.blurred {
+  filter: blur(4px);
+}
+
+.type {
+  margin: 50px;
+  font-size: 28px;
+  font-family: sans-serif;
+  text-decoration: underline;
+  font-weight: 700;
+  text-align: center;
+}
+
+.end-message {
+  min-width: 200px;
+  text-align: center;
+  font-size: 60px;
+  margin: 20px;
+}
+
+.reset-button {
+  margin: 50px;
+  height: 50px;
+  width: 150px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--text);
+}
+
+.blink {
+  animation: blink 750ms ease-in-out alternate infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+    color: red;
+  }
+
+  100% {
+    transform: scale(1.3);
+    color: red;
+  }
+
+}
+
+@media screen and (max-width: 786px) {
+  .main-nav {
+    height: 8vh;
+  }
+
+  .main-container .main-btn {
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+    margin: 20px;
+    border: 2px solid #fff;
+  }
+
+  .confirm-box {
+    width: 70%;
+    height: 25vh;
+    position: absolute;
+    left: 15%;
+  }
+
+  .game-nav {
+    height: 8vh;
+  }
+
+  .sub-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    position: relative;
+    transform: translateY(100px);
+  }
+
+  .operation-container {
+    height: 67vh;
+  }
+
+  .level-nav {
+    height: 8vh;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .info,
+  .share {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+  }
+
+  .svg {
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+  }
+}
