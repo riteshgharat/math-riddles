@@ -4,7 +4,7 @@ var buttonInstall = document.getElementById('install');
 
 if ('serviceWorker' in navigator) {
 
-  navigator.serviceWorker.register('./sw.js').then(function(registration) {
+  navigator.serviceWorker.register('/sw.js').then(function(registration) {
 
     // Registration was successful
 
