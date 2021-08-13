@@ -38,6 +38,7 @@ img {
   height: 40px;
   width: 40px;
   padding: 5px;
+  border-radius: 10px;
 }
 
 .score {
@@ -146,6 +147,7 @@ img {
   width: 50px;
   height: 50px;
   margin: 20px;
+  border-radius: 10px;
   display: grid;
   place-items: center;
   color: var(--text);
@@ -555,10 +557,11 @@ form {
 @media screen and (max-width: 550px) {
 
   .info,
-  .share {
+  .share, .svg{
     height: 40px;
     width: 40px;
     padding: 0;
+    border-radius: 10px;
   }
 
   .svg {
