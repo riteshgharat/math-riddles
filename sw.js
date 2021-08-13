@@ -1,7 +1,7 @@
 var CACHE_VERSION = 'app-v20';
 var CACHE_FILES = [
     '/',
-    'index.html',
+    '/index.html',
     '/css/style.css',
     '/js/main.js',
     '/js/game.js',
