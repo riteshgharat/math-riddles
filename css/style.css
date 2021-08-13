@@ -566,4 +566,13 @@ form {
     width: 35px;
     padding: 5px;
   }
+  confirm-box p {
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+  confirm-box{
+  width:60%;
+  }
 }
