@@ -146,7 +146,7 @@ window.addEventListener('appinstalled', () => {
 
 });
 
-*/
+
 
 // Initialize deferredPrompt for use later to show browser install prompt.
 
@@ -201,3 +201,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 
 });
+*/
