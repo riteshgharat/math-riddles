@@ -4,8 +4,9 @@ var buttonInstall = document.getElementById('install');
 function share() {
   if (navigator.share) {
     navigator.share({
-        title: 'Check it now!',
-        url: '${url}',
+      title: 'Math Riddles',
+      text:'Check it now!'
+      url: 'https://mathriddles.netlify.app',
       }).then(() => {
         //console.log('Thanks for sharing!');
         alert('Thanks for sharing! ^_^');
