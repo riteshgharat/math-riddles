@@ -16,7 +16,7 @@ var filesToCache = [
     'images/logo512.png',
     'images/assets/share-alt.svg',
     'images/banner(1).jpg',
-    'images/banner(2).jpg',
+    'images/screenshot.jpg'
 ];
 
 /* Start the service worker and cache all of the app's content */
