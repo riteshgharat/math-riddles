@@ -67,7 +67,7 @@ function level() {
 var levelContainer = document.querySelector('.level-container')
 
 function easy() {
-  minNo = 0;
+  minNo = 1;
   maxNo = 10;
   state.type = 'Easy';
   updateProblem()
