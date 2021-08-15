@@ -6,7 +6,7 @@
 ## Introduction
 * App made using Simple Html, Css and Some Js.
 * It works on Pwa technology. 
-* Vist us at  [https:mathriddles.netlify.app](https:mathriddles.netlify.app) 
+* Vist us at  [https://mathriddles.netlify.app](https://mathriddles.netlify.app) 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
