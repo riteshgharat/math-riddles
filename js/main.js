@@ -4,8 +4,9 @@
  function share() {
    if (navigator.share) {
      navigator.share({
-         title: 'Check it now!',
-         url: '${url}',
+      title:'Math Riddles',
+         text: 'Check it now',
+         url: 'http://mathriddles.netlify.app
        }).then(() => {
          //console.log('Thanks for sharing!');
          alert('Thanks for sharing! ^_^');
@@ -77,5 +78,5 @@
 
  function install() {
    msg.prompt();
-   console.log("hello world")
+   alert("Sorry, will get soon!")
  }
