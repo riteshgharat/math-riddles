@@ -105,7 +105,7 @@ function back() {
 //confirm box
 function no() {
   //clearInterval(StartInterval)false;
-  //setInterval(timer, 1000);
+  setInterval(timer, 1000);
   confirmBox.classList.remove('confirm-box-display');
   gameContainer.classList.remove('blurred');
 }
