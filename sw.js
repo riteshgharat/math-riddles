@@ -9,14 +9,13 @@ var filesToCache = [
     '/music/buttonpress.mp3',
     'favicon.ico',
     'manifest.json',
+    'sw.js',
     'images/logo144.png',
     'images/logo128.png',
     'images/logo192.png',
     'images/logo256.png',
     'images/logo512.png',
-    'images/assets/share-alt.svg',
-    'images/banner(1).jpg',
-    'images/screenshot.jpg'
+    'images/assets/share-alt.svg'
 ];
 
 /* Start the service worker and cache all of the app's content */
