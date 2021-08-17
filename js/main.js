@@ -5,7 +5,7 @@
    if (navigator.share) {
      navigator.share({
       title:'Math Riddles',
-         text: 'Check it now',
+         text: 'Math Riddles Vs1.2. Check it now!',
          url: 'http://mathriddles.netlify.app'
        }).then(() => {
          //console.log('Thanks for sharing!');
