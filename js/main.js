@@ -41,7 +41,7 @@
      console.warn('Error whilst registering service worker', err);
    });
  }
-
+/*
  let installPromptEvent;
 
  window.addEventListener('beforeinstallprompt', (event) => {
@@ -78,5 +78,5 @@
 
  function install() {
    msg.prompt();
-   alert("Sorry, will get soon!")
+   //alert("Sorry, will get soon!")
  }
