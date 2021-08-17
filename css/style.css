@@ -509,6 +509,9 @@ form {
   }
 
 }
+#intall {
+display:none;
+}
 
 @media screen and (max-width: 786px) {
   .main-nav {
