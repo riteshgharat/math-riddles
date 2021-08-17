@@ -554,7 +554,7 @@ form {
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
 
   .info,
   .share, .svg{
@@ -576,6 +576,7 @@ form {
   margin-bottom: 35px;
 }
   confirm-box{
-  width:85%;
+  width:90%;
+    text-align :center;
   }
 }
