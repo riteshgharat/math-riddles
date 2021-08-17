@@ -1,4 +1,4 @@
- var buttonInstall = document.getElementById('install');
+ var buttonInstall = document.querySelector('#install');
 
  /*  Sharing Function*/
  function share() {
@@ -41,7 +41,7 @@
      console.warn('Error whilst registering service worker', err);
    });
  }
-/*
+
  let installPromptEvent;
 
  window.addEventListener('beforeinstallprompt', (event) => {
@@ -50,12 +50,12 @@
    // Stash the event so it can be triggered later.
    installPromptEvent = event;
    // Update the install UI to notify the user app can be installed
-   document.querySelector('#install-button').disabled = false;
+   document.querySelector('#install').disabled = false;
  });
- /*
+ 
  btnInstall.addEventListener('click', () => {
    // Update the install UI to remove the install button
-   document.querySelector('#install-button').disabled = true;
+   document.querySelector('#install').disabled = true;
    // Show the modal add to home screen dialog
    installPromptEvent.prompt();
    // Wait for the user to respond to the prompt
@@ -69,7 +69,7 @@
      installPromptEvent = null;
    });
  });
- */
+ /*
  var msg;
  window.addEventListener('beforeinstallprompt', (e) => {
    e.preventDefault();
@@ -78,5 +78,5 @@
 
  function install() {
    msg.prompt();
-   //alert("Sorry, will get soon!")
- }
+   alert("Sorry, will get soon!")
+ }*/
