@@ -97,7 +97,7 @@ display:none;
 }
 
 .confirm-box .yesNobtn {
-  width: 80%;
+  width: 75%;
   display: flex;
   justify-content: space-evenly;
   position: absolute;
@@ -263,41 +263,6 @@ display:none;
 .box {
   height: 60vh;
 }
-
-/*.about-box{
-  display: none;
-}
-.score-box {
-  display: none;
-}
-
-.about-app .info-p {
-  width: 80%;
-  font-size: 15px;
-  font-family: sans-serif;
-  color: var(--text);
-}
-
-.about-app button {
-  height: 50px;
-  width: 140px;
-  margin: 30px;
-  border: 2px solid #fff;
-  border-radius: 10px;
-}
-
-.about-app .sourceCode {
-  background-color: #6572FF;
-}
-
-.about-app-display {
-  display: none;
-}
-
-.score-board {
-  display: none;
-}
-*/
 
 /* level container css */
 .level-container {
@@ -583,7 +548,7 @@ display:none;
   margin-bottom: 35px;
 }
   .confirm-box{
-  width:80%;
-  text-align: center;
+  width:60%;
+  /*text-align: center;*/
   }
 }
