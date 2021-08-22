@@ -40,7 +40,9 @@ img {
   padding: 5px;
   border-radius: 10px;
 }
-
+.install{
+display:none;
+}
 .score {
   font-size: 30px;
   padding: 20px;
