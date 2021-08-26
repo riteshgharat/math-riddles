@@ -1,7 +1,7 @@
 ## Math Riddles ![Screenshot](images/favicon-32x32.png)
 * Fun with Math
 
-![Screenshot](images/screenshot.jpg)
+![Screenshot](images/banner.jpg)
 
 ## Introduction
 * App made using Simple Html, Css and Some Js.
