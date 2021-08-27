@@ -3,9 +3,9 @@
  function share() {
    if (navigator.share) {
      navigator.share({
-      title:'Math Riddles',
-         text: 'Math Riddles Vs1.0. Check it now!',
-         url: 'http://mathriddles.netlify.app'
+         title:'Math Riddles Vs.1.0',
+         text: 'Math Riddles Vs.1.0. Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends. Check it now!',
+         url: 'https://mathriddles.netlify.app'
        }).then(() => {
          //console.log('Thanks for sharing!');
          alert('Thanks for sharing! ^_^');
