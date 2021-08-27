@@ -1,7 +1,7 @@
 {
   "name": "Math Riddles",
   "short_name": "Math",
-    "description":"Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends. Contact at: Email: riteshgharat05@gmail.com ", 
+  "description":"Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends. Contact at: Email: riteshgharat05@gmail.com ", 
   "icons": [{
     "src": "images/logo128.png",
     "sizes": "128x128",
@@ -28,12 +28,22 @@
     "type": "image/png",
     "purpose": "any maskable"
     }],
+    "shortcuts": [
+    {
+      "name": "Let's Play now",
+      "short_name": "Play now!",
+      "description": "Play Now & Enjoy",
+      "url": "https://mathriddles.netlify.app",
+      "icons": [{ "src": "https://img.icons8.com/ios-filled/90/000000/controller.png", "sizes": "90x90" }]
+    }
+  ],
   "lang": "en-US",
   "start_url": "/index.html",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#202020",
   "theme_color": "#181818",
+  "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles"]
   "screenshots": [
     {
       "src": "images/screenshot/ss(1).jpg",
