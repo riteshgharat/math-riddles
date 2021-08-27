@@ -43,7 +43,7 @@
   "orientation": "portrait",
   "background_color": "#202020",
   "theme_color": "#181818",
-  "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles"]
+  "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles"],
   "screenshots": [
     {
       "src": "images/screenshot/ss(1).jpg",
