@@ -39,7 +39,7 @@
   ],
   "lang": "en-US",
   "start_url": "/index.html",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "background_color": "#202020",
   "theme_color": "#181818",
