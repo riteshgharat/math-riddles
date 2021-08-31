@@ -1,4 +1,5 @@
-## Math Riddles ![Screenshot](images/favicon-32x32.png)
+[Screenshot](images/logo256.png)
+## Math Riddles Vs1.0 
 * Fun with Math
 
 ![Screenshot](images/banner.jpg)
