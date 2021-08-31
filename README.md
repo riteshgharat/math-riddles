@@ -1,8 +1,7 @@
 ![Screenshot](images/logo128.png)
 
 ## Math Riddles Vs1.0 
-* Fun with Math
-
+* Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test.
 ![Screenshot](images/banner.jpg)
 
 ## Introduction
