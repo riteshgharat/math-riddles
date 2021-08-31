@@ -1,4 +1,4 @@
-![Screenshot](images/logo144.png)
+![Screenshot](images/logo128.png)
 
 ## Math Riddles Vs1.0 
 * Fun with Math
