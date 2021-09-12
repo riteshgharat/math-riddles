@@ -86,9 +86,7 @@ function yes() {
 
 /* score function*/
 var storedData = JSON.parse(localStorage.getItem('localhighscore'));
-if (window.localStorage.getItem("localhighscore") == undefined) {
-  window.localStorage.setItem("localhighscore", JSON.stringify(localhighscore));
-}
+
 function score() {
   mainContainer.classList.add('main-con-none');
   levelContainer.classList.add('level-con-none');
