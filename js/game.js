@@ -1,4 +1,4 @@
- var input = document.querySelector('#input');
+var input = document.querySelector('#input');
 var output = document.querySelector('.sum');
 var btnCheck = document.querySelector('#check');
 var subTitle = document.querySelector('.sub-title');
@@ -26,7 +26,9 @@ var localhighscore = {
   medium: 0,
   hard: 0
 }
-
+if (window.localStorage.getItem("localhighscore") == undefined) {
+  window.localStorage.setItem("localhighscore", JSON.stringify(localhighscore));
+}
 /* to play btn audio */
 var btnaudio = new Audio();
 /*Main game function*/
