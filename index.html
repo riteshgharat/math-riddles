@@ -19,18 +19,6 @@
 </head>
 
 <body>
-  <div class="score-con">
-    <div class="score-box">
-      <div class="score-nav">
-        <h2>Score Board</h2>
-        <button type="submit" class="btn cancel" onclick="cancel()">x</button>
-      </div>
-      <hr>
-      <p id="scoreBoard"></p>
-      <hr />
-      <p>Right Answer: <span class="green">+10</span> <br><br>Wrong Answer: <span class="red">-15</span></p>
-    </div>
-  </div>
   <!--main page-->
   <div class="main-container">
     <nav class="main-nav">
@@ -58,6 +46,19 @@
       <button class="btn main-btn install" onclick="install()" id="install">Install</button>
     </div>
   </div>
+  <!--score container-->
+  <div class="score-con">
+    <div class="score-box">
+      <div class="score-nav">
+        <h2>Score Board</h2>
+        <button type="submit" class="btn cancel" onclick="cancel()">x</button>
+      </div>
+      <hr>
+      <p id="scoreBoard"></p>
+      <hr />
+      <p>Right Answer: <span class="green">+10</span> <br><br>Wrong Answer: <span class="red">-15</span></p>
+    </div>
+  </div>
   <!--level container-->
   <div class="level-container">
     <nav class="level-nav">
@@ -65,6 +66,7 @@
     </nav>
     <div class="level-con-btn">
       <button onclick="easy()" class="btn level-btn">Easy</button>
+      <button onclick="medium()" class="btn level-btn">Medium</button>
       <button onclick="hard()" class="btn level-btn">Hard</button>
     </div>
   </div>
@@ -119,5 +121,4 @@
   <script src="js/app.js"></script>
   <script src="js/game.js"></script>
 </body>
-
 </html>
