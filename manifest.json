@@ -1,7 +1,8 @@
 {
   "name": "Math Riddles",
   "short_name": "Math",
-  "description":"Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends. Contact at: Email: riteshgharat05@gmail.com ", 
+  "version": "1.5",
+  "description": "Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends.",
   "icons": [{
     "src": "images/logo128.png",
     "sizes": "128x128",
@@ -28,7 +29,7 @@
     "type": "image/png",
     "purpose": "any maskable"
     }],
-    "shortcuts": [
+  "shortcuts": [
     {
       "name": "Let's Play now",
       "short_name": "Play now!",
@@ -49,23 +50,23 @@
       "src": "images/screenshot/ss(1).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-     },{
+     }, {
       "src": "images/screenshot/ss(2).jpg",
       "type": "image/jpg",
-       "sizes": "1439x2881"
-    },{
+      "sizes": "1439x2881"
+    }, {
       "src": "images/screenshot/ss(3).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-    },{
+    }, {
       "src": "images/screenshot/ss(4).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-    },{
+    }, {
       "src": "images/screenshot/ss(5).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-    },{
+    }, {
       "src": "images/screenshot/ss(6).jpg",
       "type": "image/jpg",
       "sizes": "2880x1800"
