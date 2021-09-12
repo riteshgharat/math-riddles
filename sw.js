@@ -4,7 +4,7 @@ var filesToCache = [
     '/',
     'index.html',
     'css/style.css',
-    'js/main.js',
+    'js/app.js',
     'js/game.js',
     'music/buttonpress.mp3',
     'manifest.json',
