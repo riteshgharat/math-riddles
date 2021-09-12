@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name='google' content='notranslate' />
-  <title>Math Riddles</title>
+  <title>Math Riddles </title>
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css">
   <!-- Manifest and Favicon -->
@@ -17,12 +17,25 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
   <!-- HTML -->
 </head>
+
 <body>
+  <div class="score-con">
+    <div class="score-box">
+      <div class="score-nav">
+        <h2>Score Board</h2>
+        <button type="submit" class="btn cancel" onclick="cancel()">x</button>
+      </div>
+      <hr>
+      <p id="scoreBoard"></p>
+      <hr />
+      <p>Right Answer: <span class="green">+10</span> <br><br>Wrong Answer: <span class="red">-15</span></p>
+    </div>
+  </div>
   <!--main page-->
   <div class="main-container">
     <nav class="main-nav">
       <a href="https://github.com/imritpro/Math-Riddles-"><button class="btn info">i</button></a>
-      <button class="btn share" onclick="share()"><img class="svg" src="./images/assets/share-alt.svg" alt="" /></button>
+      <button class="btn share" onclick="share()"><img class="svg" src="./images/assets/share-alt.svg" /></button>
     </nav>
     <!--div class="confirm-box one">
       <p>Are you sure want to Exit?</p>
@@ -35,15 +48,14 @@
     <div class="title">
       <h2>Math</h2>
       <p>Riddiles</p><br />
-      <span>Vs1.0</span>
+      <img src="./images/assets/chrome--qrcode.png" id="qrcode" />
+      <!--span>Vs1.0</span-->
     </div>
     <div class="main-page-btn">
-      <button class="btn main-btn" onclick="Play()">
-        <!--img class="svg" src="./images/assets/play-circle.svg" alt="" /--> Play</button>
-      <!--button class="btn main-btn" onclick="music()">Music</button>
-      <button class="btn main-btn" onclick="score()">Score</button-->
-      <button class="btn main-btn install" onclick="install()" id="install">
-        <!--img class="svg" src="./images/assets/fi-br-download.svg" alt="" /--> Install</button>
+      <button class="btn main-btn" onclick="Play()">Play</button>
+      <!--button class="btn main-btn" onclick="music()">Music</button-->
+      <button class="btn main-btn" onclick="score()">Score</button>
+      <!--button class="btn main-btn install" onclick="install()" id="install">Install</button-->
     </div>
   </div>
   <!--level container-->
@@ -53,7 +65,6 @@
     </nav>
     <div class="level-con-btn">
       <button onclick="easy()" class="btn level-btn">Easy</button>
-      <button onclick="medium()" class="btn level-btn">Medium</button>
       <button onclick="hard()" class="btn level-btn">Hard</button>
     </div>
   </div>
@@ -105,7 +116,7 @@
       <button class="btn reset-button" onclick="restartGame()">Play Again</button>
     </div>
   </div>
-  <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/game.js"></script>
 </body>
 
