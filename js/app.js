@@ -161,5 +161,4 @@ window.addEventListener('appinstalled', (event) => {
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
- */
  
