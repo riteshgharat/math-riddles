@@ -130,27 +130,27 @@ function timer() {
     var finalScore = `${state.score + state.wrongScore}`;
     endMessage.innerHTML = finalScore;
 
-    /*Highscore board*/
+        /*Highscore board*/
     if (finalScore > storedData.easy && state.type == 'Easy') {
       localhighscore.easy = finalScore;
-      localhighscore.medium = storedData.medium; //Also updating external score 
+      localhighscore.medium = storedData.medium;
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //console.log('easy' + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
+    //  console.log(state.type + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
     }
-    else if (finalScore > storedData.medium && state.type == 'Medium') {
+    if (finalScore > storedData.medium && state.type == 'Medium') {
       localhighscore.medium = finalScore;
       localhighscore.easy = storedData.easy;
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //console.log('medium' + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
+    //  console.log(state.type + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
     }
-    else if (finalScore > storedData.hard && state.type == 'Hard') {
+    if (finalScore > storedData.hard && state.type == 'Hard') {
       localhighscore.hard = finalScore;
       localhighscore.medium = storedData.medium;
       localhighscore.easy = storedData.easy;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //console.log('medium' + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
+    //  console.log(state.type + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
     }
   }
   else {
