@@ -50,11 +50,7 @@
       "src": "images/screenshot/ss(1).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-     }, {
-      "src": "images/screenshot/ss(2).jpg",
-      "type": "image/jpg",
-      "sizes": "1439x2881"
-    }, {
+     },{
       "src": "images/screenshot/ss(3).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
@@ -62,14 +58,6 @@
       "src": "images/screenshot/ss(4).jpg",
       "type": "image/jpg",
       "sizes": "1439x2881"
-    }, {
-      "src": "images/screenshot/ss(5).jpg",
-      "type": "image/jpg",
-      "sizes": "1439x2881"
-    }, {
-      "src": "images/screenshot/ss(6).jpg",
-      "type": "image/jpg",
-      "sizes": "2880x1800"
     }
   ]
 }
