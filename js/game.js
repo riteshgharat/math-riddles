@@ -26,6 +26,8 @@ var localhighscore = {
   medium: 0,
   hard: 0
 }
+var storedData = JSON.parse(localStorage.getItem('localhighscore'));
+
 if (window.localStorage.getItem("localhighscore") == undefined) {
   window.localStorage.setItem("localhighscore", JSON.stringify(localhighscore));
 }
@@ -131,32 +133,37 @@ function timer() {
     /*Highscore board*/
     if (finalScore > storedData.easy && state.type == 'Easy') {
       localhighscore.easy = finalScore;
+      localhighscore.medium = storedData.medium; //Also updating external score 
+      localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //  console.log('easy' + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
+      //console.log('easy' + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
     }
     else if (finalScore > storedData.medium && state.type == 'Medium') {
       localhighscore.medium = finalScore;
+      localhighscore.easy = storedData.easy;
+      localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //  console.log('medium' + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
+      //console.log('medium' + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
     }
     else if (finalScore > storedData.hard && state.type == 'Hard') {
       localhighscore.hard = finalScore;
+      localhighscore.medium = storedData.medium;
+      localhighscore.easy = storedData.easy;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-      //   console.log('medium' + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
+      //console.log('medium' + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
     }
   }
   else {
     subTitle.innerHTML = null;
   }
 }
-
 /*restart function*/
 function restartGame() {
   state.score = 0;
   state.wrongScore = 0;
   pointScore.innerHTML = 0;
   updateProblem();
-  StartInterval = setInterval(timer, 1000);
+  StartInterval = setInterval(timer, 100);
   time = 61;
   overlay.classList.remove('overlay-visible');
   gameContainer.classList.remove('blurred');
