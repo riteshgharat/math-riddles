@@ -30,6 +30,19 @@ body {
   background-color: var(--bg);
 }
 
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--btn);
+  color: var(--text);
+  border: 1px solid var(--hover);
+}
+
+.btn:active {
+  background-color: #505050;
+  text-decoration: underline;
+}
+
 nav {
   width: 100%;
   height: 15vh;
@@ -53,25 +66,6 @@ img {
 
 .install {
   display: none;
-}
-
-/*score and countdown*/
-.score {
-  font-size: 30px;
-  padding: 20px;
-  color: #fff;
-  position: absolute;
-  right: 0;
-}
-
-.countdown {
-  width: 50%;
-  font-size: 30px;
-  color: #fff;
-  position: absolute;
-  left: 25%;
-  right: 25%;
-  text-align: center;
 }
 
 /*exit conform box*/
@@ -139,7 +133,7 @@ img {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  top: 0;
+  top: 20px;
   background-color: transparent;
 }
 
@@ -158,26 +152,18 @@ img {
   background-color: var(--bg);
 }
 
-.main-container .dice-app,
+.main-container
 .info,
 .share {
   width: 50px;
   height: 50px;
-  margin: 20px;
+  margin: 30px;
   border-radius: 10px;
   display: grid;
   place-items: center;
   color: var(--text);
   background-color: var(--nav);
-  border-right: 5px solid var(--hover);
-  border-bottom: 5px solid var(--hover);
-}
-
-.main-container .info:active,
-.dice-app:active {
-  transition: 0.750ms;
-  border: none;
-  transform: translate(5px, 5px);
+  text-decoration: none;
 }
 
 .title {
@@ -237,18 +223,6 @@ img {
 
 .sub-title {
   display: none;
-}
-
-.btn {
-  border: none;
-  outline: none;
-  background-color: var(--btn);
-  color: var(--text);
-  border: 1px solid var(--hover);
-}
-
-.btn:active {
-  background-color: #505050;
 }
 
 #back {
@@ -315,6 +289,17 @@ img {
 
 .score-con .score-box p .green {
   background-color: #8DF95D;
+}
+
+.score-con .score-box .clear {
+  width: auto;
+  height: 40px;
+  background-color: #F5FF5B;
+  color: #000;
+  border: 2px solid #000;
+  margin: 20px;
+  padding: 5px;
+  font-weight: 900;
 }
 
 /* level container css */
@@ -455,6 +440,25 @@ form {
   background-color: #505050;
 }
 
+/*score and countdown*/
+.score {
+  font-size: 30px;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+
+.countdown {
+  width: 50%;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  text-align: center;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -590,14 +594,13 @@ form {
   .svg {
     height: 40px;
     width: 40px;
-    padding: 0;
     border-radius: 10px;
   }
 
   .svg {
-    height: 35px;
-    width: 35px;
-    padding: 5px;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
   }
 
   .confirm-box p {
