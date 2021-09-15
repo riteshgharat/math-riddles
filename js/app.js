@@ -95,6 +95,15 @@ function score() {
   storedData = JSON.parse(localStorage.getItem('localhighscore'));
   document.querySelector("#scoreBoard").innerHTML = 'Easy: ' + storedData.easy + '<br><br>' + 'Medium: ' + storedData.medium + '<br><br>' + 'Hard: ' + storedData.hard;
 }
+/*function to clear player score*/
+function clearLS() {
+  var conFirm = confirm('Are you sure want to clear your score?');
+  if (conFirm == true) {
+    window.localStorage.clear("localhighscore");
+    alert('Data Clear Successfully!, just refresh app once ^_^');
+    window.location.reload();
+  }
+}
 
 function cancel() {
   mainContainer.classList.remove('main-con-none');
