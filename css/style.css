@@ -26,6 +26,7 @@
 }
 
 body {
+font-size:15pt;
   background-color: var(--bg);
 }
 center{font-size: 12px;}
@@ -623,7 +624,7 @@ form {
 @media print {
   body {
     height: auto;
-    background: url(images/banner.jpg)
+    background: url(images/chrome--qrcode.png)
   }
 
   .score-con,
