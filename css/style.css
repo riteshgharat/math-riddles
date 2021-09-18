@@ -624,14 +624,14 @@ form {
 @media print {
   body {
     height: auto;
-    background: url(images/chrome--qrcode.png)
+    background: url(images/chrome--qrcode.png);
   }
 
   .score-con,
   .level-container,
   .operation-container,
   .overlay,
-  .btn {
+  .btn, button{
     display: none;
   }
 
