@@ -29,7 +29,7 @@ body {
   font-size: 15pt;
   background-color: var(--bg);
 }
-
+center{font-size: 10px;}
 .btn {
   border: none;
   outline: none;
