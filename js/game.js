@@ -33,6 +33,8 @@ if (window.localStorage.getItem("localhighscore") == undefined) {
 }
 /* to play btn audio */
 var btnaudio = new Audio();
+var highSc = new Audio();
+highSc.src = "music/winner-trumpet.mp3";
 /*Main game function*/
 
 /*generating random number*/
@@ -130,6 +132,9 @@ function timer() {
     var finalScore = `${state.score + state.wrongScore}`;
     endMessage.innerHTML = finalScore;
 
+    if (finalScore < storedData.easy && state.type == 'Easy' || finalScore < storedData.medium && state.type == 'Medium' || finalScore < storedData.hard && state.type == 'Hard') {
+      overlayInner.classList.remove('overlay-inner-bg');
+    }
         /*Highscore board*/
     if (finalScore > storedData.easy && state.type == 'Easy') {
       localhighscore.easy = finalScore;
@@ -137,6 +142,9 @@ function timer() {
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
     //  console.log(state.type + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
+      overlayInner.classList.add('overlay-inner-bg');
+      highSc.play();
+      type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
     }
     if (finalScore > storedData.medium && state.type == 'Medium') {
       localhighscore.medium = finalScore;
@@ -144,6 +152,9 @@ function timer() {
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
     //  console.log(state.type + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
+      overlayInner.classList.add('overlay-inner-bg');
+      highSc.play();
+      type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
     }
     if (finalScore > storedData.hard && state.type == 'Hard') {
       localhighscore.hard = finalScore;
@@ -151,6 +162,9 @@ function timer() {
       localhighscore.easy = storedData.easy;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
     //  console.log(state.type + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
+      overlayInner.classList.add('overlay-inner-bg');
+      highSc.play();
+      type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
     }
   }
   else {
