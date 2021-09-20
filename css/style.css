@@ -475,6 +475,36 @@ form {
   transform: scale(1.2);
 }
 
+/*This is where we use the custom properties*/
+@supports (background: paint(something)) {
+  .overlay-inner-bg {
+    /* 
+      Optionally set property values. 
+      This can be done at root or local scope 
+    */
+    --extra-confettiNumber: 300;
+    /* defaults to 30 */
+    --extra-confettiLengthVariance: 25;
+    /* Defaults to 15 */
+    --extra-confettiWeightVariance: 3;
+    /* Defaults to 4 */
+
+    background: paint(extra-confetti);
+  }
+
+  i {
+    --extra-sparkleNumber: 10;
+    /* defaults to 30 */
+    --extra-sparkleHue: 30;
+    /* Defaults to 60 (yellow) */
+    --extra-sparkleHeightVariance: 5;
+    /* Defaults to 9 */
+    --extra-sparkleWeightVariance: 2;
+    /* Defaults to 2 */
+    background: paint(extra-sparkles);
+  }
+}
+
 .overlay-inner {
   width: 100%;
   height: 100vh;
