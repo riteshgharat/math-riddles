@@ -5,6 +5,7 @@ var subTitle = document.querySelector('.sub-title');
 var pointScore = document.querySelector('.score');
 var mistakes = document.querySelector('.mistakes');
 var gameContainer = document.querySelector('.game-container');
+var overlayInner = document.querySelector('.overlay-inner');
 var overlay = document.querySelector('.overlay');
 var endMessage = document.querySelector('.end-message');
 var type = document.querySelector('.type');
@@ -77,7 +78,8 @@ function answerGen() {
     }
   }
 }
-
+var highSc = new Audio();
+highSc.src = "music/winner-trumpet.mp3";
 /*check and click function*/
 btnCheck.addEventListener('click', () => {
   if (input.value == '') {
