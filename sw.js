@@ -1,4 +1,3 @@
-
 var cacheName = 'app-v1.5';
 var filesToCache = [
     '/',
@@ -6,7 +5,9 @@ var filesToCache = [
     'css/style.css',
     'js/app.js',
     'js/game.js',
+    'js/confetti.js',
     'music/buttonpress.mp3',
+    'music/winner-trumpet.mp3',
     'manifest.json',
     'images/logo144.png',
     'images/logo128.png',
