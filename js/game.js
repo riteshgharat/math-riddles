@@ -5,8 +5,8 @@ var subTitle = document.querySelector('.sub-title');
 var pointScore = document.querySelector('.score');
 var mistakes = document.querySelector('.mistakes');
 var gameContainer = document.querySelector('.game-container');
-var overlayInner = document.querySelector('.overlay-inner');
 var overlay = document.querySelector('.overlay');
+var overlayInner = document.querySelector('.overlay-inner');
 var endMessage = document.querySelector('.end-message');
 var type = document.querySelector('.type');
 var leadScore = document.querySelector('#score');
@@ -27,15 +27,11 @@ var localhighscore = {
   medium: 0,
   hard: 0
 }
-var storedData = JSON.parse(localStorage.getItem('localhighscore'));
-
 if (window.localStorage.getItem("localhighscore") == undefined) {
   window.localStorage.setItem("localhighscore", JSON.stringify(localhighscore));
 }
 /* to play btn audio */
 var btnaudio = new Audio();
-var highSc = new Audio();
-highSc.src = "music/winner-trumpet.mp3";
 /*Main game function*/
 
 /*generating random number*/
@@ -78,8 +74,7 @@ function answerGen() {
     }
   }
 }
-var highSc = new Audio();
-highSc.src = "music/winner-trumpet.mp3";
+
 /*check and click function*/
 btnCheck.addEventListener('click', () => {
   if (input.value == '') {
@@ -95,7 +90,7 @@ btnCheck.addEventListener('click', () => {
     }
     else {
       subTitle.innerHTML = 'Wrong Answer!'
-      state.wrongScore -= 15;
+      state.wrongScore -= 5;
       pointScore.innerHTML = state.score + state.wrongScore;
       state.wrongAns++;
       updateProblem();
@@ -109,7 +104,12 @@ btnCheck.addEventListener('click', () => {
     }
   }
 });
+var highSc = new Audio();
+highSc.src = "music/winner-trumpet.mp3";
 
+function overlaybg() {
+  highSc.play();
+}
 /*(timer)*/
 const countdown = document.querySelector('.countdown');
 
@@ -127,23 +127,21 @@ function timer() {
     clearInterval(StartInterval);
     time *= 0;
     subTitle.innerHTML = 'Time Up';
-
     overlay.classList.add('overlay-visible');
     gameContainer.classList.add('blurred');
     type.innerHTML = 'Game Over!' + '<br><br>' + `${state.type}` + ' Level';
     var finalScore = `${state.score + state.wrongScore}`;
     endMessage.innerHTML = finalScore;
 
-    if (finalScore < storedData.easy && state.type == 'Easy' || finalScore < storedData.medium && state.type == 'Medium' || finalScore < storedData.hard && state.type == 'Hard') {
-      overlayInner.classList.remove('overlay-inner-bg');
-    }
-        /*Highscore board*/
+    var storedData = JSON.parse(localStorage.getItem("localhighscore"));
+
+    /*Highscore board*/
     if (finalScore > storedData.easy && state.type == 'Easy') {
       localhighscore.easy = finalScore;
       localhighscore.medium = storedData.medium;
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-    //  console.log(state.type + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
+      console.log(finalScore, state.type + localhighscore + (finalScore > storedData.easy && state.type == 'Easy'))
       overlayInner.classList.add('overlay-inner-bg');
       highSc.play();
       type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
@@ -153,7 +151,8 @@ function timer() {
       localhighscore.easy = storedData.easy;
       localhighscore.hard = storedData.hard;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-    //  console.log(state.type + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
+      console.log(finalScore, state.type + localhighscore + (finalScore > storedData.medium && state.type == 'Medium'))
+
       overlayInner.classList.add('overlay-inner-bg');
       highSc.play();
       type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
@@ -163,10 +162,14 @@ function timer() {
       localhighscore.medium = storedData.medium;
       localhighscore.easy = storedData.easy;
       localStorage.setItem('localhighscore', JSON.stringify(localhighscore));
-    //  console.log(state.type + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
+      console.log(finalScore, state.type + localhighscore + (finalScore > storedData.hard && state.type == 'Hard'))
       overlayInner.classList.add('overlay-inner-bg');
       highSc.play();
       type.innerHTML = '<b>New High Score</b>' + '<br><br>' + `${state.type}` + ' Level';
+    }
+    if ((finalScore <= storedData.easy && state.type == 'Easy') || (finalScore <= storedData.medium && state.type == 'Medium') || (finalScore <= storedData.hard && state.type == 'Hard')) {
+      overlayInner.classList.remove('overlay-inner-bg');
+      type.innerHTML = 'Game Over!' + '<br><br>' + `${state.type}` + ' Level';
     }
   }
   else {
@@ -179,7 +182,7 @@ function restartGame() {
   state.wrongScore = 0;
   pointScore.innerHTML = 0;
   updateProblem();
-  StartInterval = setInterval(timer, 1000);
+  StartInterval = setInterval(timer, 500);
   time = 61;
   overlay.classList.remove('overlay-visible');
   gameContainer.classList.remove('blurred');
