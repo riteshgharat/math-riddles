@@ -182,7 +182,7 @@ function restartGame() {
   state.wrongScore = 0;
   pointScore.innerHTML = 0;
   updateProblem();
-  StartInterval = setInterval(timer, 500);
+  StartInterval = setInterval(timer, 1000);
   time = 61;
   overlay.classList.remove('overlay-visible');
   gameContainer.classList.remove('blurred');
