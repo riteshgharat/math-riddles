@@ -28,6 +28,7 @@
 body {
 font-size:15pt;
   background-color: var(--bg);
+  overscroll-behavior-y: contain; /*prevent from dragdown reloading for mobile devices*/
 }
 center{font-size: 12px;}
 .btn {
