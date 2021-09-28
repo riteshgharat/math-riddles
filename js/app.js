@@ -1,7 +1,7 @@
 /*protecting from reload function*/
 window.addEventListener('beforeunload', ev => {
-  //ev.returnValue = 'Are you sure you want to Exit?';
-  ev.preventDefault();
+ ev.returnValue = 'Are you sure you want to Exit?';
+  //ev.preventDefault();
 })
 
 //buttton music function
