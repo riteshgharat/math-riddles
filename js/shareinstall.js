@@ -57,7 +57,9 @@ if ('serviceWorker' in navigator) {
               //notification.className = 'show';
               const update = confirm('New update available!')
               if (update == true) {
-                //console.log('updated')
+                window.location.reload();
+              }
+              else {
                 window.location.reload();
               }
               break;

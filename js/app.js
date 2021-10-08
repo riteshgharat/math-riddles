@@ -9,11 +9,11 @@ var user = {
   }
 }
 
-/*protecting from reload function*/
+/*protecting from reload function
 window.addEventListener('beforeunload', ev => {
   ev.returnValue = 'Are you sure you want to Exit?';
-  //ev.preventDefault();
 })
+*/
 
 function getContent(fragmentId, callback) {
   var pages = {
@@ -61,7 +61,7 @@ function getContent(fragmentId, callback) {
       </ul><br />
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
-      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at <a href="mailto:riteshgharat05@gmail.com"> riteshgharat05@gmail.com </a> <a href="">Twitter</a><a href="https://github.com/imritpro/Math-Riddles-" class="github">Github</a>
+      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at <a href="mailto:riteshgharat05@gmail.com"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
     </div>
   </div>`,
     score: `<div class="score-con">
@@ -79,7 +79,6 @@ function getContent(fragmentId, callback) {
             <button type="submit" class="btn clear" onclick="clearLS()">Clear Score</button>
             <button type="submit" class="btn shareUrl" onclick="shareUrl()">Share With Friends</button>
             <br>
-            <!--center>If you find any error contact me at <code><a href="mailto:riteshgharat05@gmail.com" class="contact">riteshgharat05@gmail.com</a><code></center-->
           </div>
         </div>`,
     level: `<!--level container-->
@@ -148,7 +147,7 @@ window.onhashchange = function() {
         user.localhighscore.medium = storedData.localhighscore.medium;
         user.localhighscore.hard = storedData.localhighscore.hard;
         window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
-        // window.location.reload()
+        window.location.reload()
       })
       pName.value = storedData.playerName;
       if (pName.value != "") {

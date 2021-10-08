@@ -280,7 +280,7 @@ a {
 
 .about-con .about-info a {
   background-color: transparent;
-  min-width: 220px;
+  min-width: 250px;
   height: auto;
   margin: 10px;
   padding: 10px;
@@ -389,9 +389,11 @@ p .green {
   padding: 5px;
   font-weight: 900;
 }
-.shareUrl{
+
+.score-con .shareUrl {
   display: none
 }
+
 .score-con .score-box .contact {
   background-color: #F7FF57;
 }
@@ -431,10 +433,12 @@ p .green {
   margin: 30px;
   border: 2px solid #fff;
 }
-.level-con-none{
+
+.level-con-none {
   display: none;
   z-index: 0;
 }
+
 /* game container css */
 .game-container {
   height: 100vh;
