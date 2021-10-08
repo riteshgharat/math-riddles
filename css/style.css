@@ -389,7 +389,9 @@ p .green {
   padding: 5px;
   font-weight: 900;
 }
-
+.shareUrl{
+  display: none
+}
 .score-con .score-box .contact {
   background-color: #F7FF57;
 }

@@ -151,6 +151,9 @@ window.onhashchange = function() {
         // window.location.reload()
       })
       pName.value = storedData.playerName;
+      if (pName.value != "") {
+        document.querySelector('.shareUrl').style.display = 'block'
+      }
     }
     setTimeout(score, 10)
   }
