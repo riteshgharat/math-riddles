@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share Score Board</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style type="text/css" media="all">
+    .title {
+      height: auto;
+    }
+
+    .score-con {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <!--share score container-->
+  <div class="score-con">
+    <div class="title">
+      <img src="/images/logo144.png" alt="logo144" />
+      <h2>Math</h2>
+      <p>Riddiles</p><br />
+      <img src="/images/assets/chrome--qrcode.png" id="qrcode" />
+    </div>
+    <div class="score-box">
+      <div class="score-nav">
+        <h2>Score Board</h2>
+      </div>
+      <hr>
+      <p class="name playerName"></p>
+      <p id="scoreBoard">
+      </p>
+      <a type="submit" class="btn shareUrl" href="http://localhost:7700/index.html">Play Now</a>
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+      var myUrl = new URL(window.location.href);
+      document.querySelector("#scoreBoard").innerHTML = 'Easy: ' + myUrl.searchParams.get("easy") + '<br><br>' + 'Medium: ' + myUrl.searchParams.get("medium") + '<br><br>' + 'Hard: ' + myUrl.searchParams.get("hard");
+      document.querySelector('.name').innerHTML = myUrl.searchParams.get("playerName")
+
+      function redirect() {
+        window.location.href = "http://localhost:7700/index.html"
+      }
+      setTimeout(redirect, 10000)
+    }
+  </script>
+</body>
+
+</html>

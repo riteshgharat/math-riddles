@@ -1,0 +1,770 @@
+/*!important global css*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+/* NO SELECT + HIGHLIGHT COLOR */
+* {
+  user-select: none;
+}
+
+:root {
+  --bg: #202020;
+  /* main bg color */
+  --nav: #181818;
+  /* nav color */
+  --text: #E0E0E0;
+  /* text color */
+  --btn: #101010;
+  /* button color */
+  --hover:
+    /* #505050*/
+    #56575E;
+  /* button on hover color */
+}
+
+body {
+  font-size: 15pt;
+  background-color: var(--bg);
+  overscroll-behavior-y: contain;
+  /*prevent from dragdown reloading for mobile devices*/
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+
+#app .noJs {
+  color: var(--text);
+}
+
+center {
+  font-size: 12px;
+}
+
+.btn,
+a,
+button {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: var(--btn);
+  color: var(--text);
+  border: 1px solid var(--hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:active {
+  background-color: #505050;
+  text-decoration: underline;
+}
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background-color: var(--nav);
+  display: flex;
+  align-items: center;
+}
+
+#qrcode {
+  display: none;
+}
+
+.svg {
+  background-color: #fff;
+  height: 40px;
+  width: 42px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.install {
+  display: none;
+}
+
+/*exit conform box*/
+.confirm-box-layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .33s ease-out;
+}
+
+.confirm-box {
+  width: 50%;
+  height: 35vh;
+  position: relative;
+  background-color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 1;
+  z-index: 0;
+}
+
+.confirm-box p {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.confirm-box .yesNobtn {
+  width: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 20px;
+}
+
+.confirm-box button,
+a {
+  height: 40px;
+  width: 120px;
+  border: 2px solid #fff;
+}
+
+.confirm-box-display {
+  transition: all .33s ease-out;
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+}
+
+/**!important app css **/
+
+/* main container css */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  background-color: transparent;
+}
+
+.main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  transform: scale(1);
+  background-color: var(--bg);
+}
+
+.main-container .info,
+.share {
+  width: 50px;
+  height: 50px;
+  margin: 30px;
+  border-radius: 10px;
+  color: var(--text);
+  background-color: var(--nav);
+  text-decoration: none;
+}
+
+.title {
+  height: 40vh;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title h2,
+#score {
+  font-family: sans-serif;
+  font-size: 50px;
+  margin: 10px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.5em;
+}
+
+.title p {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: var(--hover);
+}
+
+.title span {
+  font-size: 12px;
+  color: var(--hover);
+}
+
+.main-container .main-page-btn {
+  height: 60vh;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-container .main-btn {
+  height: 80px;
+  width: 250px;
+  font-size: 18px;
+  margin: 30px;
+  border: 2px solid #fff;
+}
+
+.sub-title {
+  display: none;
+}
+
+#back {
+  width: 100px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+/*About Container*/
+.about-con {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 0 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-con .cancel {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--text);
+  color: var(--btn);
+  top: 20px;
+  right: 20px;
+}
+
+.about-con .about-info {
+  width: 80%;
+  height: auto;
+  font-size: 15px;
+  color: var(--text)
+}
+
+.about-con .about-info ul {
+  list-style: square;
+}
+
+.about-con .about-info a {
+  background-color: transparent;
+  min-width: 220px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  display: block;
+  font-weight: 900;
+  color: #fff;
+}
+
+.about-info a:nth-child(1) {
+  background-color: #FF5757
+}
+
+.about-info a:nth-child(2) {
+  background-color: #76B5FF;
+}
+
+.about-info a:nth-child(3) {
+  background-color: #000;
+}
+
+/*scoreboard container css */
+.score-con {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-box {
+  height: auto;
+  width: 40%;
+  padding: 10px;
+  background-color: var(--text);
+  border-radius: 30px;
+  flex-direction: column;
+}
+
+.score-nav {
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.score-con hr {
+  background-color: #000;
+}
+
+.score-nav .cancel {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.score-con .playerName {
+  height: 30px;
+  width: 80%;
+  margin: 10px 10% 10px 10%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 23px;
+  padding: 2px;
+}
+
+.playerName:focus {
+  border-bottom: 2px dashed #000;
+}
+
+.score-con p {
+  margin: 20px;
+}
+
+.score-con .score-box p .red,
+p .green {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.score-con .score-box p .red,
+.clear {
+  background-color: #FF5757;
+}
+
+.score-con .score-box p .green,
+.shareUrl {
+  background-color: #77FF3C;
+}
+
+.score-con .score-box .clear,
+.shareUrl,
+.contact {
+  width: auto;
+  height: 40px;
+  color: #000;
+  border: 2px solid #000;
+  margin: 20px;
+  padding: 5px;
+  font-weight: 900;
+}
+
+.score-con .score-box .contact {
+  background-color: #F7FF57;
+}
+
+/* level container css */
+.level-container {
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.level-nav {
+  height: 10vh;
+  position: relative;
+  top: 0;
+}
+
+#level {
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.level-con-btn {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.level-btn {
+  height: 80px;
+  width: 200px;
+  margin: 30px;
+  border: 2px solid #fff;
+}
+
+/* game container css */
+.game-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
+
+.game-nav {
+  height: 10vh;
+}
+
+.operation-container {
+  height: 60vh;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.operation-container #input {
+  height: 100px;
+  width: 300px;
+  margin: 20px;
+  background-color: transparent;
+  font-size: 18px;
+  color: var(--text);
+  padding: 5px;
+  border: 1px solid var(--text);
+  outline: none;
+  grid-column: 1/3;
+}
+
+
+.operation-container .check {
+  margin: 20px;
+  height: 100px;
+  width: 300px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--text);
+}
+
+.sum {
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+  position: fixed;
+}
+
+.keyboard {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  height: 90%;
+  padding: 10px 10px 10px 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.keyboard #input {
+  background-color: transparent;
+  font-size: 18px;
+  color: var(--text);
+  padding: 5px;
+  border: 1px solid var(--text);
+  outline: none;
+  grid-column: 1/3;
+  position: relative;
+}
+
+
+.keyboard #check {
+  grid-column: 4/6;
+  background-color: "";
+  position: relative;
+}
+
+.keyboard .btn {
+  display: grid;
+  place-items: center;
+  background-color: var(--btn);
+  color: var(--text);
+}
+
+.keyboard .btn:active {
+  background-color: #505050;
+}
+
+/*score and countdown*/
+.score {
+  font-size: 30px;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+
+.countdown {
+  width: 50%;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, .82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .33s ease-out;
+  transform: scale(1.2);
+}
+
+/*This is where we use the custom properties*/
+@supports (background: paint(something)) {
+  .overlay-inner-bg {
+    /* 
+      Optionally set property values. 
+      This can be done at root or local scope 
+    */
+    --extra-confettiNumber: 300;
+    /* defaults to 30 */
+    --extra-confettiLengthVariance: 25;
+    /* Defaults to 15 */
+    --extra-confettiWeightVariance: 3;
+    /* Defaults to 4 */
+
+    background: paint(extra-confetti);
+  }
+
+  i {
+    --extra-sparkleNumber: 10;
+    /* defaults to 30 */
+    --extra-sparkleHue: 30;
+    /* Defaults to 60 (yellow) */
+    --extra-sparkleHeightVariance: 5;
+    /* Defaults to 9 */
+    --extra-sparkleWeightVariance: 2;
+    /* Defaults to 2 */
+    background: paint(extra-sparkles);
+  }
+}
+
+.overlay-inner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.blurred {
+  filter: blur(4px);
+}
+
+.type {
+  margin: 50px;
+  font-size: 28px;
+  font-family: sans-serif;
+  text-decoration: underline;
+  font-weight: 700;
+  text-align: center;
+}
+
+.end-message {
+  min-width: 200px;
+  text-align: center;
+  font-size: 60px;
+  margin: 20px;
+}
+
+.reset-button {
+  margin: 50px;
+  height: 50px;
+  width: 150px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--text);
+}
+
+.blink {
+  animation: blink 750ms ease-in-out alternate infinite;
+}
+
+/*blink animation css*/
+@keyframes blink {
+  0% {
+    transform: scale(1);
+    color: red;
+  }
+
+  100% {
+    transform: scale(1.3);
+    color: red;
+  }
+
+}
+
+#intall {
+  display: none;
+}
+
+/*css for tablets*/
+@media screen and (max-width: 786px) {
+  .main-nav {
+    height: 8vh;
+  }
+
+  .main-container .main-btn {
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+    margin: 20px;
+    border: 2px solid #fff;
+  }
+
+  .confirm-box {
+    width: 70%;
+    height: 25vh;
+    position: absolute;
+    left: 15%;
+  }
+
+  .game-nav {
+    height: 8vh;
+  }
+
+  .sub-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    position: relative;
+    transform: translateY(100px);
+  }
+
+  .operation-container {
+    height: 67vh;
+  }
+
+  .level-nav {
+    height: 8vh;
+    position: relative;
+    top: 0;
+  }
+}
+
+/*css for mobile devices*/
+@media screen and (max-width: 600px) {
+
+  .info,
+  .share,
+  .svg {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
+
+  .svg {
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+  }
+
+  .confirm-box p {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+
+  .confirm-box {
+    width: 70%;
+    text-align: center;
+  }
+
+  .score-box {
+    width: 90%;
+  }
+}
+
+/*css for print*/
+@media print {
+
+  body,
+  #app {
+    width: 100%;
+    height: 100vh;
+    background: url(images/chrome--qrcode.png);
+  }
+
+  .score-con,
+  .level-container,
+  .operation-container,
+  .overlay,
+  .btn,
+  button,
+  a,
+  .game-container {
+    display: none;
+  }
+
+  .title {
+    display: flex
+  }
+
+  #qrcode {
+    display: block;
+    height: 70%;
+    width: auto;
+  }
+}
