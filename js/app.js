@@ -31,7 +31,7 @@ function getContent(fragmentId, callback) {
           <!--span>Vs1.0</span-->
         </div>
         <div class="main-page-btn">
-          <!--button class="btn main-btn" onclick="Play()">Play Now</button-->
+          <!--button class="btn main-btn" onclick="Play()">Play</button-->
           <a href="#level" class="btn main-btn">Play</a>
           <!--button class="btn main-btn" onclick="music()">Music</button-->
           <a href="#score" class="btn main-btn">Score</a>
@@ -93,7 +93,6 @@ function getContent(fragmentId, callback) {
             <button onclick="hard()" class="btn level-btn">Hard</button>
         </div>
       </div>`
-    //share: "Contact me on this page if you have any questions"
   };
   callback(pages[fragmentId]);
 }
@@ -142,7 +141,7 @@ window.onhashchange = function() {
 
       const pName = document.querySelector('.playerName');
       pName.addEventListener('change', () => {
-        console.log(pName.value)
+        //console.log(pName.value)
         user.playerName = pName.value;
         user.visited = storedData.visited;
         user.localhighscore.easy = storedData.localhighscore.easy;

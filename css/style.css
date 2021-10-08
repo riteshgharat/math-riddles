@@ -429,7 +429,10 @@ p .green {
   margin: 30px;
   border: 2px solid #fff;
 }
-
+.level-con-none{
+  display: none;
+  z-index: 0;
+}
 /* game container css */
 .game-container {
   height: 100vh;

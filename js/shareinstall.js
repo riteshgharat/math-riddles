@@ -28,7 +28,7 @@ function shareUrl() {
   if (navigator.share) {
     navigator.share({
       title: 'Math Riddles Vs.1.5',
-      text: 'Friends Score',
+      text: storedData.playerName + ' Challenge you to beat his score,  Accept Challenge 💪🏻😎 here: ',
       url: myUrl
     }).then(() => {
       alert('Thanks for sharing! ^_^');

@@ -35,7 +35,7 @@
       <p class="name playerName"></p>
       <p id="scoreBoard">
       </p>
-      <a type="submit" class="btn shareUrl" href="http://localhost:7700/index.html">Play Now</a>
+      <a type="submit" class="btn shareUrl" href="https://mathriddles.netlify.app">Play Now</a>
     </div>
   </div>
   <script>
@@ -45,7 +45,7 @@
       document.querySelector('.name').innerHTML = myUrl.searchParams.get("playerName")
 
       function redirect() {
-        window.location.href = "http://localhost:7700/index.html"
+        window.location.href = "https://mathriddles.netlify.app"
       }
       setTimeout(redirect, 10000)
     }
