@@ -374,13 +374,15 @@ p .green {
 }
 
 .score-con .score-box p .green,
-.shareUrl {
+.shareUrl,
+.shareRedirect {
   background-color: #77FF3C;
 }
 
 .score-con .score-box .clear,
 .shareUrl,
-.contact {
+.contact,
+.shareRedirect {
   width: auto;
   height: 40px;
   color: #000;
