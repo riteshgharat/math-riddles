@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6a1c81d8-009f-4719-8a6b-510a471203ac/deploy-status)](https://app.netlify.com/sites/mathriddles/deploys)
+
 ![Screenshot](images/logo128.png)
 
 ## Math Riddles Vs1.5 
@@ -13,9 +15,12 @@
 * It works on Pwa technology. 
 * Vist us [https://mathriddles.netlify.app](https://mathriddles.netlify.app).
 
+## Credits 
+* Hosting: [Netlify](https://netlify.com)
+* Icons: [Fontawesome](https://fontawesome.com)
+
 ## Contributing
 * Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 * Please make sure to update tests as appropriate.
-
 * For any issues contact at riteshgharat05@gmail.com.
 

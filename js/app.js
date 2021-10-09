@@ -46,7 +46,7 @@ function getContent(fragmentId, callback) {
       <img src="/images/logo144.png" alt="logo144" />
       <h2>Math</h2>
       <p>Riddiles</p><br />
-      <span>Vs1.0</span>
+      <span>Vs1.5</span>
     </div>
     <div class="about-info">
       <h3>#About: </h3><br />
@@ -59,9 +59,11 @@ function getContent(fragmentId, callback) {
         <li>Live Score Update</li>
         <li>Offline Support</li>
       </ul><br />
+      <h3>#Credit:</h3>
+      <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
-      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at <a href="mailto:riteshgharat05@gmail.com"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
+      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at <a href="mailto:riteshgharat05@gmail.com" target="_blank"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
     </div>
   </div>`,
     score: `<div class="score-con">
@@ -71,7 +73,7 @@ function getContent(fragmentId, callback) {
               <a type="submit" href="#home" class="btn cancel" >x</a>
             </div>
             <hr>
-           <input class="playerName" placeholder="Player's name✏" > 
+           <input class="playerName" maxlength="20" max="20" placeholder="Player's name✏" > 
            <hr>
             <p id="scoreBoard"></p>
             <hr/>
@@ -108,19 +110,6 @@ if (!location.hash) {
 }
 loadContent();
 
-/* score function*/
-var storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
-
-/*function to clear player score*/
-function clearLS() {
-  var conFirm = confirm('Are you sure want to clear your score?');
-  if (conFirm == true) {
-    window.localStorage.clear("localhighscore");
-    alert('Data Clear Successfully!, just refresh app once ^_^');
-    window.location.reload();
-  }
-}
-
 window.onhashchange = function() {
   storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
 
@@ -147,7 +136,7 @@ window.onhashchange = function() {
         user.localhighscore.medium = storedData.localhighscore.medium;
         user.localhighscore.hard = storedData.localhighscore.hard;
         window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
-        window.location.reload()
+        //window.location.reload()
       })
       pName.value = storedData.playerName;
       if (pName.value != "") {
@@ -157,10 +146,21 @@ window.onhashchange = function() {
     setTimeout(score, 10)
   }
 }
-window.addEventListener("hashchange", loadContent)
+window.addEventListener("hashchange", loadContent);
 
+/* score function*/
+var storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
+/*function to clear player score*/
+function clearLS() {
+  var conFirm = confirm('Are you sure want to clear your score?');
+  if (conFirm == true) {
+    window.localStorage.clear("MathRiddlesApp");
+    alert('Data Clear Successfully!, just refresh app once ^_^');
+    window.location.reload();
+  }
+}
 
-//buttton music function
+//on buttton press play music function
 document.querySelectorAll('button').forEach(btn => {
   btn.addEventListener('click', () => {
     btnaudio.src = 'music/buttonpress.mp3';

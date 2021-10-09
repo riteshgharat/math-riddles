@@ -2,7 +2,7 @@
 function share() {
   if (navigator.share) {
     navigator.share({
-        title: 'Math Riddles Vs.1.5',
+        title: 'Math Riddles',
         text: 'Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation. Challenge yourself with different levels of maths games and stretch the limits of your mind. Brain games are prepared with an approach of an IQ test. Enjoy & Share game with your friends. Check it now!',
         url: 'https://mathriddles.netlify.app'
       }).then(() => {
@@ -13,7 +13,7 @@ function share() {
     alert('Sorry! Unable to share =_=')
   }
 }
-var storedData = JSON.parse(localStorage.getItem('localhighscore'));
+var storedData = JSON.parse(localStorage.getItem("MathRiddlesApp"));
 
 function shareUrl() {
   const myUrl = new URL("https://mathriddles.netlify.app/images/assets/score.html")
@@ -27,7 +27,7 @@ function shareUrl() {
 
   if (navigator.share) {
     navigator.share({
-      title: 'Math Riddles Vs.1.5',
+      title: 'Math Riddles',
       text: storedData.playerName + ' Challenge you to beat his score in Math Riddles. Accept Challenge 💪🏻😎 & beat it!',
       url: myUrl
     }).then(() => {
