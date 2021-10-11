@@ -1,7 +1,7 @@
 {
   "name": "Math Riddles",
   "short_name": "Math",
-  "version": "1.5",
+  "version": "1.5.5",
   "description": "Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.",
   "icons": [{
     "src": "images/logo128.png",
