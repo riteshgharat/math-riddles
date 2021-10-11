@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.netlify.mathriddles.twa",
+    "sha256_cert_fingerprints": [
+      "95:FF:7D:93:59:F2:20:0E:30:E8:86:DE:04:12:A9:3C:5E:40:66:93:38:0C:52:9B:C3:13:1D:FB:B3:A0:7B:B5"
+    ]
+  }
+}]

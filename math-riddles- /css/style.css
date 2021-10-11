@@ -19,9 +19,7 @@
   /* text color */
   --btn: #101010;
   /* button color */
-  --hover:
-    /* #505050*/
-    #56575E;
+  --hover:#56575E;
   /* button on hover color */
 }
 
@@ -669,6 +667,10 @@ form {
   display: none;
 }
 
+.rotate {
+  display: none;
+}
+
 /*css for tablets*/
 @media screen and (max-width: 786px) {
   .main-nav {
@@ -777,5 +779,31 @@ form {
     display: block;
     height: 70%;
     width: auto;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation:landscape) {
+  .rotate {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--nav);
+    background-color: rgba(255, 255, 255, .95);
+  }
+
+  .rotate center p {
+    font-size: 18px;
+  }
+}
+
+/*css for tablets*/
+@media screen and (max-width: 786px) {
+  .main-nav {
+    height: 8vh;
   }
 }

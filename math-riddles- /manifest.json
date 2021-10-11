@@ -2,7 +2,7 @@
   "name": "Math Riddles",
   "short_name": "Math",
   "version": "1.5",
-  "description": "Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles Maths Riddles level up your IQ with a mix of Math Oparation.",
+  "description": "Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.",
   "icons": [{
     "src": "images/logo128.png",
     "sizes": "128x128",
@@ -41,23 +41,35 @@
   "lang": "en-US",
   "start_url": "/index.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#202020",
   "theme_color": "#181818",
   "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles"],
   "screenshots": [
     {
-      "src": "images/screenshot/ss(1).jpg",
-      "type": "image/jpg",
-      "sizes": "1439x2881"
-     }, {
-      "src": "images/screenshot/ss(3).jpg",
-      "type": "image/jpg",
-      "sizes": "1439x2881"
-    }, {
-      "src": "images/screenshot/ss(4).jpg",
-      "type": "image/jpg",
-      "sizes": "1439x2881"
+      "src": "/images/screenshot/ss(1).jpg",
+      "sizes": "320x640",
+      "type": "image/gif"
+    },
+    {
+      "src": "/images/screenshot/ss(3).jpg",
+      "sizes": "320x640",
+      "type": "image/gif"
+    },
+    {
+      "src": "/images/screenshot/ss(4).jpg",
+      "sizes": "320x640",
+      "type": "image/gif"
+    },
+    {
+      "src": "/images/screenshot/ss(5).jpg",
+      "sizes": "320x640",
+      "type": "image/gif"
+    },
+    {
+      "src": "/images/screenshot/ss(6).jpg",
+      "sizes": "320x640",
+      "type": "image/gif"
     }
   ]
 }

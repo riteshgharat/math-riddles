@@ -59,7 +59,7 @@ function getContent(fragmentId, callback) {
         <li>Live Score Update</li>
         <li>Offline Support</li>
       </ul><br />
-      <h3>#Credit:</h3><br>
+      <h3>#Credit:</h3>
       <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
@@ -157,6 +157,7 @@ function clearLS() {
     window.localStorage.clear("MathRiddlesApp");
     alert('Data Clear Successfully!, just refresh app once ^_^');
     window.location.reload();
+    window.location.hash = '#home';
   }
 }
 
