@@ -1,4 +1,4 @@
-var cacheName = 'cache vs1.5.6';
+var cacheName = 'cache vs1.5.7';
 var files = [
     '/',
     'index.html',
@@ -11,12 +11,18 @@ var files = [
     'music/winner-trumpet.mp3',
     'manifest.json',
     'images/assets/score.html',
+    'images/assets/rotate-your-screen.gif',
+    'images/favicon-16x16.png',
+    'images/apple-touch-icon.png',
+    'images/favicon-32x32.png',
     'images/logo144.png',
     'images/logo128.png',
     'images/logo192.png',
     'images/logo256.png',
     'images/logo512.png',
-    'images/assets/share-alt.svg'
+    'images/assets/share-alt.svg',
+    'images/assets/chrome--qrcode.png'
+
 ];
 //Adding `install` event listener
 self.addEventListener('install', (event) => {
