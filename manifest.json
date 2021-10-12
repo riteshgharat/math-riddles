@@ -48,28 +48,28 @@
   "screenshots": [
     {
       "src": "/images/screenshot/ss(1).jpg",
-      "sizes": "320x640",
-      "type": "image/gif"
+      "sizes": "1280x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "/images/screenshot/ss(2).jpg",
+      "sizes": "1280x1920",
+      "type": "image/jpg"
     },
     {
       "src": "/images/screenshot/ss(3).jpg",
-      "sizes": "320x640",
-      "type": "image/gif"
+      "sizes": "1280x1920",
+      "type": "image/jpg"
     },
     {
       "src": "/images/screenshot/ss(4).jpg",
-      "sizes": "320x640",
-      "type": "image/gif"
+      "sizes": "1280x1920",
+      "type": "image/jpg"
     },
     {
       "src": "/images/screenshot/ss(5).jpg",
-      "sizes": "320x640",
-      "type": "image/gif"
-    },
-    {
-      "src": "/images/screenshot/ss(6).jpg",
-      "sizes": "320x640",
-      "type": "image/gif"
+      "sizes": "1280x1920",
+      "type": "image/jpg"
     }
   ]
 }

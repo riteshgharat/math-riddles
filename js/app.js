@@ -221,10 +221,11 @@ function back() {
 }
 /*confirm box*/
 function no() {
-  //clearInterval(StartInterval, false);
-  setInterval(timer, 1000);
+  clearInterval(StartInterval);
   confirmBox.classList.remove('confirm-box-display');
   gameContainer.classList.remove('blurred');
+
+  StartInterval = setInterval(timer, 1000);
 }
 
 function yes() {
