@@ -1,7 +1,7 @@
 {
   "name": "Math Riddles",
   "short_name": "Math",
-  "version": "1.5.5",
+  "version": "1.5.0.0",
   "description": "Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.",
   "icons": [{
     "src": "images/logo128.png",
@@ -29,6 +29,14 @@
     "type": "image/png",
     "purpose": "any maskable"
     }],
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#202020",
+  "theme_color": "#181818",
+  "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles", "math riddles"],
   "shortcuts": [
     {
       "name": "Lets Play now",
@@ -36,15 +44,33 @@
       "description": "Play Now & Enjoy",
       "url": "https://mathriddles.netlify.app",
       "icons": [{ "src": "https://img.icons8.com/ios-filled/90/000000/controller.png", "sizes": "90x90" }]
+    },
+    {
+      "name": "Levels",
+      "short_name": "Levels",
+      "url": "https://mathriddles.netlify.app/#level",
+      "icons": [{ "src": "https://img.icons8.com/ios-glyphs/30/000000/stairs.png", "sizes": "90x90" }]
+    },
+    {
+      "name": "Score Board",
+      "short_name": "Score Board",
+      "url": "https://mathriddles.netlify.app/#score",
+      "icons": [{ "src": "https://img.icons8.com/ios/50/000000/trophy.png", "sizes": "90x90" }]
+     },
+    {
+      "name": "About",
+      "short_name": "About",
+      "url": "https://mathriddles.netlify.app/#about",
+      "icons": [{ "src": "https://img.icons8.com/ios-glyphs/30/000000/info.png", "sizes": "90x90" }]
+     }
+  ],
+  "prefer_related_applications": "true",
+  "related_applications": [
+    {
+      "platform": "samsung store",
+      "url": "https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa"
     }
   ],
-  "lang": "en-US",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "any",
-  "background_color": "#202020",
-  "theme_color": "#181818",
-  "categories": ["game", "webapp", "pwa", "chrome", "math", "riddles"],
   "screenshots": [
     {
       "src": "/images/screenshot/ss(1).jpg",

@@ -2,7 +2,7 @@
 
 ![Screenshot](images/logo128.png)
 
-## Math Riddles Vs1.5 
+## Math Riddles Vs1.5.0.0
 * Challenge yourself with Complicated Maths Puzzle Game and Interesting Riddles 
 * Level up your IQ with a mix of Math Oparation. 
 * Challenge yourself with different levels of maths games and stretch the limits of your mind. 

@@ -19,7 +19,7 @@
   /* text color */
   --btn: #101010;
   /* button color */
-  --hover:#56575E;
+  --hover: #D9DADB;
   /* button on hover color */
 }
 
@@ -251,6 +251,14 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.about-con .storeLinks {
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .about-con .cancel {

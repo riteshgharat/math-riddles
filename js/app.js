@@ -46,9 +46,11 @@ function getContent(fragmentId, callback) {
       <img src="/images/logo144.png" alt="logo144" />
       <h2>Math</h2>
       <p>Riddiles</p><br />
-      <span>Vs1.5</span>
-    </div>
-    <div class="about-info">
+      <span>Vs1.5.0.0</span>
+    </div><br>
+    <a href="https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa" target="_blank"><img src="/images/assets/GalaxyStore_English.png" alt="Math Riddles - Simple Math Quiz App | Samsung Store" style="width: 250px; height: 54px;" width="250" height="54" ></a><br>
+    <a href="https://www.producthunt.com/posts/math-riddles?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-math-riddles" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=315287&theme=light" alt="Math Riddles - Simple Math Quiz App | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a><br><br>
+      <div class="about-info">
       <h3>#About: </h3><br />
       <p>Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.</p><br />
       <h3>#Keyfeature:</h3><br />
@@ -59,7 +61,7 @@ function getContent(fragmentId, callback) {
         <li>Live Score Update</li>
         <li>Offline Support</li>
       </ul><br />
-      <h3>#Credit:</h3>
+      <h3>#Credit:</h3><br>
       <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
