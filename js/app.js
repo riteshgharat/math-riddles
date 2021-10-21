@@ -227,7 +227,6 @@ var confirmBox = document.querySelector('.confirm-box-layer');
 
 function back() {
   //var exitConfirm = confirm('Are sure you want to exit?');
-  // gameContainer.exitFullscreen();
 
   clearInterval(StartInterval);
   confirmBox.classList.add('confirm-box-display');
