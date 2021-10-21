@@ -41,11 +41,15 @@
     window.onload = function() {
 
       var myUrl = decodeURIComponent(window.location.href);
-      myUrl = new URL(myUrl);
-      //console.log(myUrl);
 
-      document.querySelector("#scoreBoard").innerHTML = 'Easy: ' + myUrl.searchParams.get("easy") + '<br><br>' + 'Medium: ' + myUrl.searchParams.get("medium") + '<br><br>' + 'Hard: ' + myUrl.searchParams.get("hard");
-      document.querySelector('.name').innerHTML = myUrl.searchParams.get("playerName")
+      function decode() {
+        myUrl = new URL(myUrl);
+        //console.log(myUrl);
+
+        document.querySelector("#scoreBoard").innerHTML = 'Easy: ' + myUrl.searchParams.get("easy") + '<br><br>' + 'Medium: ' + myUrl.searchParams.get("medium") + '<br><br>' + 'Hard: ' + myUrl.searchParams.get("hard");
+        document.querySelector('.name').innerHTML = myUrl.searchParams.get("playerName")
+      }
+      setTimeout(decode, 10)
 
       function redirect() {
         window.location.href = "https://mathriddles.netlify.app"
