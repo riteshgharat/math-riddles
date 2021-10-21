@@ -1,4 +1,4 @@
-var cacheName = 'cache vs1.5.1.2'
+var cacheName = 'test mode cache vs1.5.1.2'
 var files = [
     '/',
     'index.html',
