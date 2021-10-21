@@ -1,8 +1,8 @@
 {
-  "name": "Math Riddles",
+  "name": "Math Riddles | Quiz App",
   "short_name": "Math",
   "version": "1.5.0.0",
-  "description": "Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.",
+  "description": "Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with Math Oparations.",
   "icons": [{
     "src": "images/logo128.png",
     "sizes": "128x128",
@@ -67,7 +67,11 @@
   "prefer_related_applications": "true",
   "related_applications": [
     {
-      "platform": "samsung store",
+      "platform": "webapp",
+      "url": "https://mathriddles.netlify.app"
+    },
+    {
+      "platform": "amazon",
       "url": "https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa"
     }
   ],

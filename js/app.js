@@ -15,6 +15,7 @@ window.addEventListener('beforeunload', ev => {
 })
 */
 
+
 function getContent(fragmentId, callback) {
   var pages = {
     home: `<div class="main-container">
@@ -49,10 +50,10 @@ function getContent(fragmentId, callback) {
       <span>Vs1.5.0.0</span>
     </div><br>
     <a href="https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa" target="_blank"><img src="/images/assets/GalaxyStore_English.png" alt="Math Riddles - Simple Math Quiz App | Samsung Store" style="width: 250px; height: 54px;" width="250" height="54" ></a><br>
-    <a href="https://www.producthunt.com/posts/math-riddles?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-math-riddles" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=315287&theme=light" alt="Math Riddles - Simple Math Quiz App | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a><br><br>
+    <a href="https://www.producthunt.com/posts/math-riddles?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-math-riddles" target="_blank"><img src="/images/assets/review.svg" alt="Math Riddles - Simple Math Quiz App | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a><br><br>
       <div class="about-info">
       <h3>#About: </h3><br />
-      <p>Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with a mix of Math Oparation.</p><br />
+      <p>Simple Quiz App with Interesting Maths Riddles & Levels up your IQ with Math Oparations.</p><br />
       <h3>#Keyfeature:</h3><br />
       <ul>
         <li>Interesting Maths Riddles</li>
@@ -62,10 +63,10 @@ function getContent(fragmentId, callback) {
         <li>Offline Support</li>
       </ul><br />
       <h3>#Credit:</h3><br>
-      <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome</li></ul><br>
+      <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome, Icons8</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
-      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at <a href="mailto:riteshgharat05@gmail.com" target="_blank"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
+      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at: <a href="mailto:riteshgharat05@gmail.com" target="_blank"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
     </div>
   </div>`,
     score: `<div class="score-con">
@@ -123,6 +124,15 @@ window.onhashchange = function() {
     user.localhighscore.medium = storedData.localhighscore.medium;
     user.localhighscore.hard = storedData.localhighscore.hard;
     window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
+
+    const data = navigator.userAgent;
+    const replaceBrand = data.replace('SM', 'Samsung')
+    let = deviceBrand = replaceBrand.match('Samsung');
+    deviceBrand = deviceBrand[0];
+
+    if (storedData.visited == 0 && deviceBrand == 'Samsung') {
+      window.location.href = 'https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa';
+    }
   }
 
   if (location.hash == "#score") {
@@ -217,6 +227,8 @@ var confirmBox = document.querySelector('.confirm-box-layer');
 
 function back() {
   //var exitConfirm = confirm('Are sure you want to exit?');
+  // gameContainer.exitFullscreen();
+
   clearInterval(StartInterval);
   confirmBox.classList.add('confirm-box-display');
   gameContainer.classList.add('blurred');

@@ -16,13 +16,17 @@ function share() {
 var storedData = JSON.parse(localStorage.getItem("MathRiddlesApp"));
 
 function shareUrl() {
-  const myUrl = new URL("https://mathriddles.netlify.app/images/assets/score.html")
+  //var myUrl = new URL("https://mathriddles.netlify.app/images/assets/score.html")
+  var myUrl = new URL(location.href)
   myUrl.searchParams.set("medium", storedData.localhighscore.medium);
-  myUrl.searchParams.set("no", Math.random().toFixed(10))
+  //myUrl.searchParams.set("no", Math.random().toFixed(10))
   myUrl.searchParams.set("hard", storedData.localhighscore.hard);
   myUrl.searchParams.set("playerName", storedData.playerName);
   myUrl.searchParams.set("easy", storedData.localhighscore.easy);
 
+  // console.log(encodeURIComponent(myUrl.search))
+  //console.log(myUrl)
+  myUrl = myUrl.origin + '/images/assets/score.html' + encodeURIComponent(myUrl.search)
   //console.log(myUrl)
 
   if (navigator.share) {
@@ -37,13 +41,15 @@ function shareUrl() {
   else {
     alert('Sorry! Unable to share =_=')
   }
+
 }
+
 /*Registering ServiceWorker*/
 
 if ('serviceWorker' in navigator) {
   // Register the service worker
   navigator.serviceWorker.register('/sw.js').then(reg => {
-    console.log('Successfully registered service worker', reg);
+    console.log('👍 Successfully registered service worker', /*reg*/ );
     reg.addEventListener('updatefound', () => {
       // An updated service worker has appeared in reg.installing!
       newWorker = reg.installing;
@@ -73,15 +79,29 @@ if ('serviceWorker' in navigator) {
 var butInstall = document.querySelector('#install');
 
 window.addEventListener('beforeinstallprompt', (event) => {
-  console.log('👍', 'beforeinstallprompt', event);
-  // Stash the event so it can be triggered later.
-  window.deferredPrompt = event;
-  // Remove the 'hidden' class from the install button container
- // divInstall.classList.toggle('hidden', false);
+  //console.log('👍', 'beforeinstallprompt', event);
+
+  storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
+  const data = navigator.userAgent;
+  const replaceBrand = data.replace('SM', 'Samsung')
+  let deviceBrand = replaceBrand.match('Samsung');
+  deviceBrand = deviceBrand[0];
+
+  if (storedData.visited == 0 && deviceBrand == 'Samsung') {
+    alert('Download Same App from Samsung App Store')
+    window.location.href = 'https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa';
+  }
+  else {
+    // Stash the event so it can be triggered later.
+    window.deferredPrompt = event;
+    // Remove the 'hidden' class from the install button container
+    //divInstall.classList.toggle('hidden', false);
+  }
 });
 
-butInstall.addEventListener('click', async () => {
-  console.log('👍', 'butInstall-clicked');
+butInstall.addEventListener('click', () => {
+  //console.log('👍', 'butInstall-clicked');
+
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
@@ -90,16 +110,29 @@ butInstall.addEventListener('click', async () => {
   // Show the install prompt.
   promptEvent.prompt();
   // Log the result
-  const result = await promptEvent.userChoice;
-  console.log('👍', 'userChoice', result);
+  const result = promptEvent.userChoice;
+  //console.log('👍', 'userChoice', result);
   // Reset the deferred prompt variable, since
   // prompt() can only be called once.
   window.deferredPrompt = null;
   // Hide the install button.
   //divInstall.classList.toggle('hidden', true);
+  //}
 });
+
 window.addEventListener('appinstalled', (event) => {
-  console.log('👍', 'appinstalled', event);
+  //console.log('👍', 'appinstalled', event);
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
+
+if (navigator.getInstallRelatedApps) {
+  //navigator.getInstallRelatedApps();
+  const relatedApps = navigator.getInstalledRelatedApps();
+  relatedApps.forEach(app => {
+    console.log(app.id, app.platform, app.url);
+  });
+}
+else {
+  console.log('related app api is not present in browser!')
+}

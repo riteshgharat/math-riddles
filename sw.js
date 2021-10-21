@@ -1,4 +1,4 @@
-var cacheName = 'cache vs1.5.1.0'
+var cacheName = 'cache vs1.5.1.1'
 var files = [
     '/',
     'index.html',
@@ -12,6 +12,8 @@ var files = [
     'manifest.json',
     'images/assets/score.html',
     'images/assets/rotate-your-screen.gif',
+    '/images/assets/GalaxyStore_English.png',
+    '/images/assets/review.svg',
     'images/favicon-16x16.png',
     'images/apple-touch-icon.png',
     'images/favicon-32x32.png',

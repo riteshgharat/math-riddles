@@ -198,4 +198,14 @@ function restartGame() {
   time = 61;
   overlay.classList.remove('overlay-visible');
   gameContainer.classList.remove('blurred');
+
+  /*  if (gameContainer.requestFullscreen) {
+      gameContainer.requestFullscreen();
+    } else if (gameContainer.webkitRequestFullscreen) {
+      // Safari 
+      gameContainer.webkitRequestFullscreen();
+    } else if (gameContainer.msRequestFullscreen) {
+      // IE11 
+      elem.msRequestFullscreen();
+    }}*/
 }
