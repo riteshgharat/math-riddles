@@ -248,3 +248,6 @@ function yes() {
   clearInterval(StartInterval);
   time = 61;
 }
+
+
+/*working on multiple player game*/
