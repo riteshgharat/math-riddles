@@ -23,6 +23,9 @@
 </head>
 
 <body>
+  <div class="popUp">
+    <span><img id="popImg" src="dis/css/assets/svgs/triangle-exclamation-solid.svg">
+  </div>
   <div class="rotate">
     <img class="rotate" src="images/assets/rotate-your-screen.gif" width="300px" alt="rotate screen" />
     <center>
@@ -32,7 +35,7 @@
   <div id="app">
     <center>
       <p class="noJs">
-        <h2> Alert !</h2><br> Javascript is not supported in your browser!
+      <h2> Alert !</h2><br> Javascript is not supported in your browser!
       </p>
       <center>
   </div>
@@ -45,12 +48,13 @@
     </nav>
     <div class="operation-container">
       <p class="sum"></p>
+      <!--input type="text"/-->
       <p class="sub-title"></p>
     </div>
     <!--keyboard-->
     <div class="keyboard">
       <form name="keyIn">
-        <input name="input" type="number" id="input" maxlength="5" placeholder="Answer" readonly />
+        <input name="input" type="text" id="input" placeholder="Answer" readonly />
         <span class="btn" id="delete" onclick="document.keyIn.input.value = ''">x</span>
         <span class="btn" id="check">Check</span>
         <span class="btn" onclick="document.keyIn.input.value += '1'">1</span>
@@ -82,6 +86,7 @@
       <p class="type"></p>
       <p class="end-message"></p>
       <button class="btn reset-button" onclick="restartGame()">Play Again </button>
+      <button class="btn reset-button" onclick="Home()">Home</button>
     </div>
   </div>
   <!-- scripts -->
@@ -89,7 +94,6 @@
   <script src="js/confetti.js"></script>
   <script src="js/game.js"></script>
   <script src="js/shareinstall.js"></script>
-  <script type="module" src="js/firebase.js"></script>
 </body>
 
 </html>

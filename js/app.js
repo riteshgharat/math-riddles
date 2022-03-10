@@ -1,3 +1,8 @@
+//protecting from reload function
+window.addEventListener('pageshow', ev => {
+  if (location.hash != '#home') { location.hash = '#home'; }
+})
+
 var user = {
   playerName: '',
   visited: 0,
@@ -9,19 +14,12 @@ var user = {
   }
 }
 
-/*protecting from reload function
-window.addEventListener('beforeunload', ev => {
-  ev.returnValue = 'Are you sure you want to Exit?';
-})
-*/
-
-
 function getContent(fragmentId, callback) {
   var pages = {
     home: `<div class="main-container">
         <nav class="main-nav">
           <a href="#about" class="btn info">i</a>
-          <button class="btn share" onclick="share()"><img class="svg" src="./images/assets/share-alt.svg" alt="share" /></button>
+          <img onclick="share()" class="btn share svg" src="./images/assets/share-alt.svg" alt="share" />
         </nav>
         <!--Main Container-->
         <audio src="music/bg.mp3" loop></audio>
@@ -66,7 +64,7 @@ function getContent(fragmentId, callback) {
       <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome, Icons8</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
-      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at: <a href="mailto:riteshgharat05@gmail.com" target="_blank"><i class="fas fa-at"></i> riteshgharat05@gmail.com </a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
+      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at:<a href="mailto:riteshgharat05@gmail.com" target="_blank">riteshgharat05@gmail.com</a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
     </div>
   </div>`,
     score: `<div class="score-con">
@@ -141,14 +139,12 @@ window.onhashchange = function() {
 
       const pName = document.querySelector('.playerName');
       pName.addEventListener('change', () => {
-        //console.log(pName.value)
         user.playerName = pName.value;
         user.visited = storedData.visited;
         user.localhighscore.easy = storedData.localhighscore.easy;
         user.localhighscore.medium = storedData.localhighscore.medium;
         user.localhighscore.hard = storedData.localhighscore.hard;
         window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
-        //window.location.reload()
       })
       pName.value = storedData.playerName;
       if (pName.value != "") {
@@ -156,6 +152,7 @@ window.onhashchange = function() {
       }
     }
     setTimeout(score, 10)
+    window.onload = function() { if (location.hash == '#score') { setTimeout(score, 10) } }
   }
 }
 window.addEventListener("hashchange", loadContent);
@@ -192,6 +189,7 @@ document.querySelectorAll('a').forEach(a => {
     btnaudio.play();
   })
 });
+
 /* displaying level container*/
 var levelContainer = document.querySelector('#app')
 
@@ -227,10 +225,13 @@ var confirmBox = document.querySelector('.confirm-box-layer');
 
 function back() {
   //var exitConfirm = confirm('Are sure you want to exit?');
-
   clearInterval(StartInterval);
   confirmBox.classList.add('confirm-box-display');
-  gameContainer.classList.add('blurred');
+  gameContainer.classList.add('blurred');;
+
+  /*if (!gameContainer.requestFullscreen) {
+    gameContainer.exitFullscreen();
+  }*/
 }
 /*confirm box*/
 function no() {
@@ -247,7 +248,71 @@ function yes() {
   levelContainer.classList.remove('level-con-none');
   clearInterval(StartInterval);
   time = 61;
+  location.hash = '#level';
 }
 
 
-/*working on multiple player game*/
+function Home() {
+  yes();
+  overlay.classList.remove('overlay-visible');
+  gameContainer.classList.remove('blurred');
+
+  location.hash = '#home';
+  console.log(location.hash);
+}
+
+function handleVisibilityChange() {
+  let visibility = document.visibilityState;
+  if (location.hash == '#game' && visibility == 'hidden') {
+    back();
+  }
+}
+document.addEventListener("visibilitychange", handleVisibilityChange, false);
+
+/*js for popup*/
+function popUpApply(type, title) {
+  let pop = document.querySelector('.popUp');
+  let src;
+
+  if (type == 'error') {
+    src = '/images/assets/circle-exclamation-solid.svg';
+    pop.style.backgroundColor = '#FF6464';
+    pop.innerHTML = `<img id="popImg" src="${src}"><br>${title}`;
+  }
+  else if (type == 'success') {
+    src = '/images/assets/circle-check-solid.svg';
+    pop.style.backgroundColor = '#6DFF64';
+    pop.innerHTML = `<img id="popImg" src="${src}"><br>${title}`;
+  }
+  else if (type == 'alert') {
+    src = '/images/assets/triangle-exclamation-solid.svg';
+    pop.style.backgroundColor = '#FFF664';
+    pop.innerHTML = `<img id="popImg" src="${src}"><br>${title}`;
+  }
+  else { pop.innerText = 'undefined type or title'; }
+  pop.classList.remove('PopUpApply');
+  void pop.offsetWidth; // trigger a DOM reflow suggest by https://betterprogramming.pub/how-to-restart-a-css-animation-with-javascript-and-what-is-the-dom-reflow-a86e8b6df00f
+  pop.classList.toggle('PopUpApply');
+}
+
+window.addEventListener('keydown', (e) => {
+  var keyIn = document.querySelector('#input').value;
+  
+  console.log(e.key, e.keyCode, e.char)
+  
+  if (e.keyCode == 27) { back() }
+  if (e.keyCode == 13) { check() }
+  if (e.keyCode == 8) { keyIn = '' }
+
+  if (e.keyCode == 96) { keyIn += "0" }
+  else if (e.keyCode == 97) { keyIn += "1" }
+  else if (e.keyCode == 98) { keyIn += "2" }
+  else if (e.keyCode == 99) { keyIn += "3" }
+  else if (e.keyCode == 100) { keyIn += "4" }
+  else if (e.keyCode == 101) { keyIn += "5" }
+  else if (e.keyCode == 102) { keyIn += "6" }
+  else if (e.keyCode == 103) { keyIn += "7" }
+  else if (e.keyCode == 104) { keyIn += "8" }
+  else if (e.keyCode == 105) { keyIn += "9" }
+  else { keyIn = '' }
+})

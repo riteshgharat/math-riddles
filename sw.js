@@ -1,4 +1,4 @@
-var cacheName = 'test mode cache vs1.5.1.3'
+var cacheName = 'test mode cache vs1.5.1.0'
 var files = [
     '/',
     'index.html',
@@ -23,9 +23,12 @@ var files = [
     'images/logo256.png',
     'images/logo512.png',
     'images/assets/share-alt.svg',
-    'images/assets/chrome--qrcode.png'
-
+    'images/assets/chrome--qrcode.png',
+    '/images/assets/triangle-exclamation-solid.svg',
+    '/images/assets/circle-check-solid.svg',
+    '/images/assets/circle-exclamation-solid.svg',
 ];
+
 //Adding `install` event listener
 self.addEventListener('install', (event) => {
   console.info('Event: Install');

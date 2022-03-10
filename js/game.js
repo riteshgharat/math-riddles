@@ -82,6 +82,9 @@ function answerGen() {
 
 /*check and click function*/
 btnCheck.addEventListener('click', () => {
+  check();
+})
+ function check() {
   if (input.value == '') {
     subTitle.textContent = 'Enter Answer!';
   }
@@ -108,7 +111,7 @@ btnCheck.addEventListener('click', () => {
       }
     }
   }
-});
+}
 
 var highSc = new Audio();
 highSc.src = "music/winner-trumpet.mp3";
@@ -190,6 +193,7 @@ function timer() {
 }
 /*restart function*/
 function restartGame() {
+  location.hash = '#game';
   state.score = 0;
   state.wrongScore = 0;
   pointScore.innerHTML = 0;
@@ -199,13 +203,13 @@ function restartGame() {
   overlay.classList.remove('overlay-visible');
   gameContainer.classList.remove('blurred');
 
-  /*  if (gameContainer.requestFullscreen) {
-      gameContainer.requestFullscreen();
-    } else if (gameContainer.webkitRequestFullscreen) {
-      // Safari 
-      gameContainer.webkitRequestFullscreen();
-    } else if (gameContainer.msRequestFullscreen) {
-      // IE11 
-      elem.msRequestFullscreen();
-    }}*/
+  /*if (gameContainer.requestFullscreen) {
+    gameContainer.requestFullscreen();
+  } else if (gameContainer.webkitRequestFullscreen) {
+    // Safari 
+    gameContainer.webkitRequestFullscreen();
+  } else if (gameContainer.msRequestFullscreen) {
+    // IE11 
+    elem.msRequestFullscreen();
+  }*/
 }

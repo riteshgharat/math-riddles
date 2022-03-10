@@ -50,19 +50,7 @@
       "short_name": "Levels",
       "url": "https://mathriddles.netlify.app/#level",
       "icons": [{ "src": "https://img.icons8.com/ios-glyphs/30/000000/stairs.png", "sizes": "90x90" }]
-    },
-    {
-      "name": "Score Board",
-      "short_name": "Score Board",
-      "url": "https://mathriddles.netlify.app/#score",
-      "icons": [{ "src": "https://img.icons8.com/ios/50/000000/trophy.png", "sizes": "90x90" }]
-     },
-    {
-      "name": "About",
-      "short_name": "About",
-      "url": "https://mathriddles.netlify.app/#about",
-      "icons": [{ "src": "https://img.icons8.com/ios-glyphs/30/000000/info.png", "sizes": "90x90" }]
-     }
+    }
   ],
   "prefer_related_applications": "true",
   "related_applications": [
@@ -71,7 +59,7 @@
       "url": "https://mathriddles.netlify.app"
     },
     {
-      "platform": "amazon",
+      "platform": "samsung",
       "url": "https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa"
     }
   ],
