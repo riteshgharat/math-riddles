@@ -22,7 +22,7 @@ function getContent(fragmentId, callback) {
           <img onclick="share()" class="btn share svg" src="./images/assets/share-alt.svg" alt="share" />
         </nav>
         <!--Main Container-->
-        <audio src="music/bg.mp3" loop></audio>
+        <!--audio src="music/bg.mp3" loop></audio-->
         <div class="title">
           <h2>Math</h2>
           <p>Riddiles</p><br />
@@ -125,9 +125,10 @@ window.onhashchange = function() {
 
     const data = navigator.userAgent;
     const replaceBrand = data.replace('SM', 'Samsung')
-    let = deviceBrand = replaceBrand.match('Samsung');
+    var deviceBrand = replaceBrand.match('Samsung');
+    if(deviceBrand != undefined){
     deviceBrand = deviceBrand[0];
-
+    }
     if (storedData.visited == 0 && deviceBrand == 'Samsung') {
       window.location.href = 'https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa';
     }
@@ -296,23 +297,27 @@ function popUpApply(type, title) {
 }
 
 window.addEventListener('keydown', (e) => {
-  var keyIn = document.querySelector('#input').value;
+  if(location.hash == "#game"){
+  var keyIn = document.getElementById("input");
   
   console.log(e.key, e.keyCode, e.char)
   
   if (e.keyCode == 27) { back() }
+  if (e.keyCode == 78) { no() }
+  if (e.keyCode == 89) { yes() }
   if (e.keyCode == 13) { check() }
-  if (e.keyCode == 8) { keyIn = '' }
+  if (e.keyCode == 8) { keyIn.value = '' }
 
-  if (e.keyCode == 96) { keyIn += "0" }
-  else if (e.keyCode == 97) { keyIn += "1" }
-  else if (e.keyCode == 98) { keyIn += "2" }
-  else if (e.keyCode == 99) { keyIn += "3" }
-  else if (e.keyCode == 100) { keyIn += "4" }
-  else if (e.keyCode == 101) { keyIn += "5" }
-  else if (e.keyCode == 102) { keyIn += "6" }
-  else if (e.keyCode == 103) { keyIn += "7" }
-  else if (e.keyCode == 104) { keyIn += "8" }
-  else if (e.keyCode == 105) { keyIn += "9" }
+  if (e.keyCode == (96 || 48)) { keyIn.value += "0" }
+  else if (e.keyCode == (97 || 49)) { keyIn.value += "1" }
+  else if (e.keyCode == (98 || 50)) { keyIn.value += "2" }
+  else if (e.keyCode == (99 || 51)) { keyIn.value += "3" }
+  else if (e.keyCode == (100 || 52)) { keyIn.value += "4" }
+  else if (e.keyCode == (101 || 53)) { keyIn.value += "5" }
+  else if (e.keyCode == (102 || 54)) { keyIn.value += "6" }
+  else if (e.keyCode == (103 || 55)) { keyIn.value += "7" }
+  else if (e.keyCode == (104 || 56)) { keyIn.value += "8" }
+  else if (e.keyCode == (105 || 57)) { keyIn.value += "9" }
   else { keyIn = '' }
+  }
 })
