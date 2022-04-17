@@ -35,7 +35,6 @@ function getContent(fragmentId, callback) {
           <!--button class="btn main-btn" onclick="music()">Music</button-->
           <a href="#score" class="btn main-btn">Score</a>
           <button class="btn main-btn install" onclick="install()" id="install">Install</button>
-          <!--div id="notification">A new version of this app is available. Click <a id="reload">here</a> to update.</div-->
         </div>
       </div>`,
     about: `

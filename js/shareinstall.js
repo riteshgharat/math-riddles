@@ -40,7 +40,7 @@ function shareUrl() {
   }
 }
 
-/*Registering ServiceWorker
+/*Registering ServiceWorke*/
 if ('serviceWorker' in navigator) {
   // Register the service worker
   navigator.serviceWorker.register('/sw.js').then(reg => {
@@ -114,9 +114,9 @@ window.addEventListener('appinstalled', (event) => {
   //console.log('👍', 'appinstalled', event);
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
+  butInstall.style.display = 'none';
 });
 
-/*
 if (navigator.getInstallRelatedApps) {
   const relatedApps = navigator.getInstalledRelatedApps();
   relatedApps.forEach(app => {
@@ -126,7 +126,7 @@ if (navigator.getInstallRelatedApps) {
 else {
   console.log('related app api is not present in browser!')
 }
-
+/*
 const installedApps = await navigator.getInstalledRelatedApps();
 const nativeApp = installedApps.find(app => app.id === 'com.example.myapp');
 if (nativeApp && doesVersionSendPushMessages(nativeApp.version)) {
