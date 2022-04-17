@@ -56,7 +56,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 .btn:active {
@@ -584,7 +583,6 @@ form {
   visibility: hidden;
   transition: all .33s ease-out;
   transform: scale(1.2);
-  z-index: 3;
 }
 
 /*This is where we use the custom properties*/
@@ -630,7 +628,6 @@ form {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
-  z-index: 5;
 }
 
 .blurred {
