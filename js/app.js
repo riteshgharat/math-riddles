@@ -11,7 +11,8 @@ var user = {
     easy: 0,
     medium: 0,
     hard: 0
-  }
+  },
+  installed: false
 }
 
 function getContent(fragmentId, callback) {
@@ -34,7 +35,7 @@ function getContent(fragmentId, callback) {
           <a href="#level" class="btn main-btn">Play</a>
           <!--button class="btn main-btn" onclick="music()">Music</button-->
           <a href="#score" class="btn main-btn">Score</a>
-          <button class="btn main-btn install" onclick="install()" id="install">Install</button>
+          <button class="btn main-btn install" id="install">Install</button>
         </div>
       </div>`,
     about: `
@@ -117,6 +118,7 @@ window.onhashchange = function() {
     user.visited = storedData.visited;
     user.visited++;
     user.playerName = storedData.playerName;
+    user.installed = storedData.installed;
     user.localhighscore.easy = storedData.localhighscore.easy;
     user.localhighscore.medium = storedData.localhighscore.medium;
     user.localhighscore.hard = storedData.localhighscore.hard;
@@ -140,6 +142,7 @@ window.onhashchange = function() {
       pName.addEventListener('change', () => {
         user.playerName = pName.value;
         user.visited = storedData.visited;
+        user.installed = storedData.installed;
         user.localhighscore.easy = storedData.localhighscore.easy;
         user.localhighscore.medium = storedData.localhighscore.medium;
         user.localhighscore.hard = storedData.localhighscore.hard;
@@ -296,9 +299,9 @@ function popUpApply(type, title) {
 
 window.addEventListener('keydown', (e) => {
   var keyIn = document.querySelector('#input').value;
-  
+
   console.log(e.key, e.keyCode, e.char)
-  
+
   if (e.keyCode == 27) { back() }
   if (e.keyCode == 13) { check() }
   if (e.keyCode == 8) { keyIn = '' }

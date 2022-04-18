@@ -29,7 +29,8 @@ var user = {
     easy: 0,
     medium: 0,
     hard: 0
-  }
+  },
+    installed: false
 }
 if (window.localStorage.getItem("MathRiddlesApp") == undefined) {
   window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
@@ -84,7 +85,8 @@ function answerGen() {
 btnCheck.addEventListener('click', () => {
   check();
 })
- function check() {
+
+function check() {
   if (input.value == '') {
     subTitle.textContent = 'Enter Answer!';
   }
@@ -147,6 +149,7 @@ function timer() {
     /*Highscore board*/
     if (finalScore > storedData.localhighscore.easy && state.type == 'Easy') {
       user.visited = storedData.visited;
+      user.installed = storedData.installed;
       user.playerName = storedData.playerName;
       user.localhighscore.easy = finalScore;
       user.localhighscore.medium = storedData.localhighscore.medium;
@@ -159,6 +162,7 @@ function timer() {
     }
     if (finalScore > storedData.localhighscore.medium && state.type == 'Medium') {
       user.visited = storedData.visited;
+      user.installed = storedData.installed;
       user.playerName = storedData.playerName;
       user.localhighscore.medium = finalScore;
       user.localhighscore.easy = storedData.localhighscore.easy;
@@ -172,6 +176,7 @@ function timer() {
     }
     if (finalScore > storedData.localhighscore.hard && state.type == 'Hard') {
       user.visited = storedData.visited;
+      user.installed = storedData.installed;
       user.playerName = storedData.playerName;
       user.localhighscore.hard = finalScore;
       user.localhighscore.medium = storedData.localhighscore.medium;

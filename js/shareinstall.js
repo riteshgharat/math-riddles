@@ -56,8 +56,8 @@ if ('serviceWorker' in navigator) {
             if (navigator.serviceWorker.controller) {
               //let notification = document.getElementById('notification ');
               //notification.className = 'show';
-              const update = alert('New update available!')
-              window.onload();
+              const update = alert('New update available!');
+              window.location.reload();
               break;
             }
         }
@@ -66,8 +66,16 @@ if ('serviceWorker' in navigator) {
   })
 };
 
-var butInstall = document.querySelector('#install');
-
+const installApp = document.querySelector('#install');
+storedData = JSON.parse(localStorage.getItem('MathRiddlesApp'));
+/*
+if (storedData.installed == true) {
+  installApp.style.display = 'none';
+}
+else {
+  installApp.style.display = 'block';
+}
+/*
 window.addEventListener('beforeinstallprompt', (event) => {
   //console.log('👍', 'beforeinstallprompt', event);
 
@@ -77,20 +85,36 @@ window.addEventListener('beforeinstallprompt', (event) => {
   let deviceBrand = replaceBrand.match('Samsung');
   deviceBrand = deviceBrand[0];
 
-  if (storedData.visited == 0 && deviceBrand == 'Samsung') {
+  if (storedData.visited < 3 && deviceBrand == 'Samsung') {
     alert('Download Same App from Samsung App Store')
     window.location.href = 'https://apps.samsung.com/appquery/appDetail.as?appId=app.netlify.mathriddles.twa';
+
+    user.playerName = storedData.playerName;
+    user.visited = storedData.visited;
+    user.localhighscore.easy = storedData.localhighscore.easy;
+    user.localhighscore.medium = storedData.localhighscore.medium;
+    user.localhighscore.hard = storedData.localhighscore.hard;
+    user.installed = true;
+    window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
   }
   else {
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
+
+    user.playerName = storedData.playerName;
+    user.visited = storedData.visited;
+    user.localhighscore.easy = storedData.localhighscore.easy;
+    user.localhighscore.medium = storedData.localhighscore.medium;
+    user.localhighscore.hard = storedData.localhighscore.hard;
+    user.installed = true;
+    window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
     // Remove the 'hidden' class from the install button container
     //divInstall.classList.toggle('hidden', false);
   }
 });
 
 butInstall.addEventListener('click', () => {
-  //console.log('👍', 'butInstall-clicked');
+  console.log('👍', 'butInstall-clicked');
 
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
@@ -101,7 +125,7 @@ butInstall.addEventListener('click', () => {
   promptEvent.prompt();
   // Log the result
   const result = promptEvent.userChoice;
-  //console.log('👍', 'userChoice', result);
+  console.log('👍', 'userChoice', result);
   // Reset the deferred prompt variable, since
   // prompt() can only be called once.
   window.deferredPrompt = null;
@@ -114,7 +138,33 @@ window.addEventListener('appinstalled', (event) => {
   //console.log('👍', 'appinstalled', event);
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
+
+  user.playerName = storedData.playerName;
+  user.visited = storedData.visited;
+  user.localhighscore.easy = storedData.localhighscore.easy;
+  user.localhighscore.medium = storedData.localhighscore.medium;
+  user.localhighscore.hard = storedData.localhighscore.hard;
+  user.installed = true;
+  window.localStorage.setItem("MathRiddlesApp", JSON.stringify(user));
+
   butInstall.style.display = 'none';
+});
+*/
+//const installApp = document.getElementById('install');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  installApp.show();
+  deferredPrompt = e;
+});
+
+installApp.addEventListener('click', async () => {
+  if (deferredPrompt !== null) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      deferredPrompt = null;
+    }
+  }
 });
 
 if (navigator.getInstallRelatedApps) {
