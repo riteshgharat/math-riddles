@@ -300,7 +300,7 @@ function popUpApply(type, title) {
 window.addEventListener('keydown', (e) => {
   var keyIn = document.querySelector('#input').value;
 
-  console.log(e.key, e.keyCode, e.char)
+  //console.log(e.key, e.keyCode, e.char)
 
   if (e.keyCode == 27) { back() }
   if (e.keyCode == 13) { check() }

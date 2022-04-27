@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mathriddles.netlify.app
+Token: 121a060e5cc5d05d2c0a0bd7543f315863bbba591f16e33c4fb7d300d3d7f472

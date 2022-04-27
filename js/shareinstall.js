@@ -36,6 +36,7 @@ function shareUrl() {
     }).catch(popUpApply('error', (error)));
   }
   else {
+    
     popUpApply('error', 'Sorry! Unable to share');
   }
 }
@@ -75,7 +76,7 @@ if (storedData.installed == true) {
 else {
   installApp.style.display = 'block';
 }
-/*
+*/
 window.addEventListener('beforeinstallprompt', (event) => {
   //console.log('👍', 'beforeinstallprompt', event);
 
@@ -149,9 +150,9 @@ window.addEventListener('appinstalled', (event) => {
 
   butInstall.style.display = 'none';
 });
-*/
-//const installApp = document.getElementById('install');
 
+//const installApp = document.getElementById('install');
+/*
 window.addEventListener('beforeinstallprompt', (e) => {
   installApp.show();
   deferredPrompt = e;
@@ -176,6 +177,7 @@ if (navigator.getInstallRelatedApps) {
 else {
   console.log('related app api is not present in browser!')
 }
+*/
 /*
 const installedApps = await navigator.getInstalledRelatedApps();
 const nativeApp = installedApps.find(app => app.id === 'com.example.myapp');
