@@ -64,7 +64,7 @@ function getContent(fragmentId, callback) {
       <ul><li>Hosting: Netlify </li><li>Icons: Font Awesome, Icons8</li></ul><br>
       <!--img src="/images/banner.jpg" alt="banner"/><br /-->
       <h3>#Contribute</h3><br />
-      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at:<a href="mailto:riteshgharat05@gmail.com" target="_blank">riteshgharat05@gmail.com</a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a>
+      <p>The entire project source is available on GitHub. Feel free to use it for whatever *personal* reasons you need, but please don't redistrubute or try to sell it. If you have suggestions for feature you'd like to see added, or if you find any bugs, send me an email at:<a href="mailto:riteshgharat05@gmail.com" target="_blank">riteshgharat05@gmail.com</a> <a target="_blank" href="https://twitter.com/__iamrit__"><i class="fab fa-twitter"></i> Twitter</a><a target="_blank" href="https://github.com/imritpro/Math-Riddles-" class="github"><i class="fab fa-github"></i> Github</a><br><a href="https://mathriddles.netlify.app/pages/privacy-policy.html">Privacy Policy</a>
     </div>
   </div>`,
     score: `<div class="score-con">

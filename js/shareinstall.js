@@ -22,7 +22,7 @@ function shareUrl() {
   myUrl.searchParams.set("playerName", storedData.playerName);
   myUrl.searchParams.set("easy", storedData.localhighscore.easy);
 
-  myUrl = myUrl.origin + '/images/assets/score.html' + encodeURIComponent(myUrl.search)
+  myUrl = myUrl.origin + '/pages/score.html' + encodeURIComponent(myUrl.search)
 
   console.log(myUrl);
 
@@ -36,12 +36,12 @@ function shareUrl() {
     }).catch(popUpApply('error', (error)));
   }
   else {
-    
+
     popUpApply('error', 'Sorry! Unable to share');
   }
 }
 
-/*Registering ServiceWorke*/
+/*Registering ServiceWorker
 if ('serviceWorker' in navigator) {
   // Register the service worker
   navigator.serviceWorker.register('/sw.js').then(reg => {

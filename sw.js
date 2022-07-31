@@ -10,7 +10,6 @@ var files = [
     'music/buttonpress.mp3',
     'music/winner-trumpet.mp3',
     'manifest.json',
-    'images/assets/score.html',
     'images/assets/rotate-your-screen.gif',
     '/images/assets/GalaxyStore_English.png',
     '/images/assets/review.svg',
