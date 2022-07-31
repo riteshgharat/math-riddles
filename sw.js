@@ -1,4 +1,4 @@
-var cacheName = "production mode cache vs1.5.5//27-04-2022"
+var cacheName = "production mode cache vs1.5.6//31-07-2022"
 var files = [
     '/',
     'index.html',
