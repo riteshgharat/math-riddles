@@ -41,7 +41,7 @@ function shareUrl() {
   }
 }
 
-/*Registering ServiceWorker
+//Registering ServiceWorker
 if ('serviceWorker' in navigator) {
   // Register the service worker
   navigator.serviceWorker.register('/sw.js').then(reg => {
