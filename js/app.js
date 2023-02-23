@@ -136,8 +136,51 @@ window.onhashchange = function() {
 
   if (location.hash == "#score") {
     function score() {
-      document.querySelector("#scoreBoard").innerHTML = 'Easy: ' + storedData.localhighscore.easy + '<br><br>' + 'Medium: ' + storedData.localhighscore.medium + '<br><br>' + 'Hard: ' + storedData.localhighscore.hard;
+     const scoreBoard = document.querySelector("#scoreBoard");
 
+const easyScore = sanitize(storedData.localhighscore.easy);
+
+const mediumScore = sanitize(storedData.localhighscore.medium);
+
+const hardScore = sanitize(storedData.localhighscore.hard);
+
+scoreBoard.innerHTML = `Easy: ${easyScore}<br><br>Medium: ${mediumScore}<br><br>Hard: ${hardScore}`;
+
+function sanitize(str) {
+
+  return str.replace(/[&<>"']/g, function(match) {
+
+    switch (match) {
+
+      case '&':
+
+        return '&amp;';
+
+      case '<':
+
+        return '&lt;';
+
+      case '>':
+
+        return '&gt;';
+
+      case '"':
+
+        return '&quot;';
+
+      case "'":
+
+        return '&#x27;';
+
+      default:
+
+        return match;
+
+    }
+
+  });
+
+}
       const pName = document.querySelector('.playerName');
       pName.addEventListener('change', () => {
         user.playerName = pName.value;
