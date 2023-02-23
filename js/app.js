@@ -144,7 +144,7 @@ const mediumScore = sanitize(storedData.localhighscore.medium);
 
 const hardScore = sanitize(storedData.localhighscore.hard);
 
-scoreBoard.innerHTML = `Easy: ${easyScore}<br><br>Medium: ${mediumScore}<br><br>Hard: ${hardScore}`;
+scoreBoard.innerText = `Easy: ${easyScore}\nMedium: ${mediumScore}\nHard: ${hardScore}`;
 
 function sanitize(str) {
 
